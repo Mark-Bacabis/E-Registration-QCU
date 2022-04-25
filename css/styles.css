@@ -1,0 +1,408 @@
+:root{ /* This is like variables */
+   --buttonColor: #FCA000;
+   --textColor: #fff;
+   --footerBgColor: #25252D;
+}
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   letter-spacing: 2px;
+}
+
+
+
+/* Header */
+
+.header{
+   position: fixed;
+   padding: 0 5%;
+   width: 100%;
+   height: 15vh;
+   top: 0;
+   display: flex;
+   z-index: 99;
+}
+
+.header .header-content{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   
+   width: 100%;
+}
+
+.header .header-content nav{
+   
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.header .header-content nav ul{
+   padding-right: 80px;
+}
+
+.header .header-content nav ul li{
+   display: inline-block;
+   margin: 0 20px;
+}
+.header .header-content nav ul li a{
+   position: relative;
+   text-decoration: none;
+   color: var(--textColor);
+   opacity: .7;
+}
+
+.header .header-content nav ul li a:hover::after{
+   content: "";
+   position: absolute;
+   left: 0;
+   bottom: -80%;
+   width: 100%;
+   background-color: #fff;
+   height: 2px;
+}
+
+
+
+.header .header-content nav ul li a:hover{
+   opacity: 1;
+}
+
+.header .header-content nav .s-nav{
+   background-color: var(--buttonColor);
+   padding: 5px 25px;
+   color: var(--textColor);
+   text-decoration: none;
+   border-radius: 5em;
+}
+
+/* xx Header */
+
+
+
+
+
+
+/* SHOP BUTTON FIXED*/
+
+.button-fixed{
+   position: fixed;
+   bottom: 10%;
+   right: 0%;
+   background-color: var(--buttonColor);
+   z-index: 99;
+}
+
+/* X SHOP BUTTON FIXED*/
+
+
+
+
+/* front page */
+
+.front-page{
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   color: var(--textColor);
+}
+
+.front-page .front-img{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+}
+
+.front-page .front-img .front-overlay{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: #000;
+   opacity: .2;
+}
+
+.front-page .front-img img{
+   width: 100%;
+   height: 100%;
+}
+
+.front-page .text-hero{
+   text-align: center; 
+}
+.front-page .text-hero h1{
+   font-size: 2.4em;
+   margin: 5px 0;
+}
+
+.front-page .text-hero p{
+   font-size: 1.4em;
+   font-style: italic;
+}
+.front-page .button-hero{
+   margin: 10px;
+}
+
+.front-page .button-hero a{
+   color: var(--textColor);
+   text-decoration: none;
+   padding: 5px 17px;
+   background-color: var(--buttonColor);
+   border-radius: 5em;
+}
+
+/* xx front page */
+
+
+
+
+
+
+
+
+
+
+
+
+/* COURSE OFFER */
+.course-offer-container{
+   position: relative;
+   height: 75vh;
+   width: 100%;
+   overflow: hidden;
+}
+
+.course-offer-container .course-offer-box{
+   position: absolute;
+   width: 500%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+}
+
+.course-offer-container .course-offer-box input[type="radio"]{
+   display: none;
+}
+
+
+.course-offer-container .course-offer-box .course-offer{
+   width: 20%;
+   transition: 2s;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px 2%;
+   height: 90%;
+}
+
+
+.course-offer-container .course-offer-box .course-offer .course-head{
+   height: 100%; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 0 10%;
+}
+
+.course-offer-container .course-offer-box .course-offer .course-head .head-info{
+   margin-top: 5px;
+   text-align: center;
+   width: 100%;
+   
+}
+
+
+.course-offer-container .course-offer-box .course-offer .course-head .head-info h3{
+   letter-spacing: 1px;
+}
+
+.course-offer-container .course-offer-box .course-offer .course-head .head-info p{
+   letter-spacing: 0px;
+   font-size: .9em;
+   width: 100%;
+   opacity: .8;
+   line-height: 1.2em ;
+}
+
+
+.course-offer-container .course-offer-box .course-offer .about-course{
+   background-color: #ffffff;
+   height: 90%;
+  
+}
+.course-offer-container .course-offer-box .course-offer .about-course .course-offer-banner{
+   margin-bottom: 10px;
+}
+.course-offer-container .course-offer-box .course-offer .about-course .course-offer-banner h2{
+   display: inline;
+   background-color: #FCA000;
+   padding: 0 10px;
+   text-transform: uppercase;
+   color: var(--textColor);
+   letter-spacing: 3px;
+}
+
+.course-offer-container .course-offer-box .course-offer .about-course .course-title{
+   margin-bottom: 10px;
+   font-size: 1.4em;
+}
+
+.course-offer-container .course-offer-box .course-offer .about-course .course-desc p{
+   line-height: 1.5em;
+   text-align: justify;
+   font-size: 1.2em;
+}
+
+
+
+
+
+/* for manual slide navigation */
+
+.course-offer-container .navigation-manual{
+   position: absolute;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   bottom: 5%;
+}
+
+.course-offer-container .navigation-manual .manual-btn{
+   border: 2px solid rgba(0, 0, 0, 0.527);
+   padding: 5px 30px;
+   cursor: pointer;
+   transition: 1s;
+   margin: 0 3px;
+}
+
+.course-offer-container .navigation-manual .manual-btn:hover{
+   background-color: #000;
+}
+
+#radio1:checked ~ .first{
+   margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+   margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+   margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+   margin-left: -60%;
+}
+
+#radio5:checked ~ .first{
+   margin-left: -80%;
+}
+/* for manual slide navigation */
+
+
+/* for automatic slide navigation */
+
+.course-offer-box .navigation-auto{
+   position: absolute;
+   width: 20%;
+   display: flex;
+   justify-content: center;
+   bottom: 5%;
+   
+}
+
+.course-offer-box .navigation-auto div{
+   border: 2px solid rgb(0, 0, 0);
+   padding: 5px 30px;
+   cursor: pointer;
+   transition: 1s;
+   margin: 0 3px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+   background-color: #000;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+   background-color: #000;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+   background-color: #000;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+   background-color: #000;
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn5{
+   background-color: #000;
+}
+
+/* X COURSE OFFER */
+
+
+
+
+
+
+
+
+
+
+
+
+/* SHOP */
+
+.shop-container{
+   display: none;
+}
+/* X SHOP */
+
+
+
+
+
+
+
+
+/* FOOTER */
+.footer{
+   background-color: var(--footerBgColor);
+   text-align: center;
+   height: 40vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: rgba(255, 255, 255, 0.459);
+}
+
+.footer .icon-links{
+   margin-bottom: 10px;
+}
+
+.footer .icon-links ul li{
+   display: inline-block;
+   margin: 0 10px;
+}
+
+.footer .icon-links ul li a img{
+   width: 35px;
+   opacity: .7;
+}
+
+.footer .footer-text{
+   line-height: 2em;
+   margin-bottom: 15px;
+}
