@@ -27,7 +27,7 @@
                <li> <a href="#"> About </a> </li>
             </ul>
 
-            <a href="#" class="s-nav"> Register </a>
+            <a href="./form/fillup.php" class="s-nav"> Register </a>
          </nav>
       </div>
    </div>
@@ -47,7 +47,7 @@
          <p> Good life Starts here </p>
       </div>
       <div class="button-hero">
-         <a href="#"> Register now </a>
+         <a href="./form/fillup.php"> Register now </a>
       </div>
    </div>
    <!--x first page -->
@@ -132,15 +132,20 @@
 
    <!-- shop -->
    <div class="shop-container">
-      <img src="./img/shopbg.jpg" class="shopbg">
+     
+      <div class="shop-bg">
+         <img src="./img/shopbg.jpg" class="shopbg">
+         <div class="overlay-shop"></div>
 
+      </div>
+      
       <div class="shop-content">
          <div class="shop-text">
             <h1> Be presentable </h1>
             <p> Always wear complete uniform </p>
 
-            <a href="#"> 
-               <i> icon here</i> Shop now
+            <a href="#" class="button-hero"> 
+               <img src="./img/Icons/wshop.png" alt=""> Shop now
             </a>
          </div>
          <div class="shop-img">
@@ -162,11 +167,30 @@
             <div class="camp-img">
                <img src="./img/51948995_2224700194217155_7121890052690411520_n.jpg" alt="">
             </div>
-            <div class="campus-info">
-               <div class="title"> 
-                  <h2> Campus name </h2>
-                  <p> Campus address </p>
-               </div>
+
+            <div class="campus-info"> 
+                  <h2> San Bartolome Campus </h2>
+                  <p>  673 Quirino Highway, San Bartolome, Novaliches, Quezon City </p>
+            </div>
+         </div>
+         <div class="campus-box center-box">
+            <div class="camp-img">
+               <img src="./img/51948995_2224700194217155_7121890052690411520_n.jpg" alt="">
+            </div>
+
+            <div class="campus-info"> 
+                  <h2> San Bartolome Campus </h2>
+                  <p>  673 Quirino Highway, San Bartolome, Novaliches, Quezon City </p>
+            </div>
+         </div>
+         <div class="campus-box">
+            <div class="camp-img">
+               <img src="./img/51948995_2224700194217155_7121890052690411520_n.jpg" alt="">
+            </div>
+
+            <div class="campus-info"> 
+                  <h2> San Bartolome Campus </h2>
+                  <p>  673 Quirino Highway, San Bartolome, Novaliches, Quezon City </p>
             </div>
          </div>
 
