@@ -13,22 +13,25 @@
    </header>
 
    <section>
-
       <div class="form-box">
 
          <div class="progress-bar">
-            <div class="progress">
+            <div class="progress" id="progress">
                <div class="number current"> 1 </div>
                <div class="number"> 2 </div>
                <div class="number"> 3 </div>
                <div class="number"> 4 </div>
             </div>
-         </div>
+         </div>   
+
+         
 
          <div class="form-fill-box">
 
+         
             <!-- Demographic 1 -->
             <div class="demographic-box">
+               <form action="" method="post">
                   <h1> Demographic Profile </h1>
                <div class="input-forms">  
                   <div class="input-name">
@@ -75,14 +78,14 @@
                </div>
                
                <div class="buttons">
-                  <button id="cancel"> Cancel </button>
-                  <button id="next1"> Next </button>
+                  <a href="../index.php" id="cancel"> Cancel </a>
+                  <button id="next1" type="button"> Next </button>
                </div>
             </div>  
             
 
             <!-- Demographic 2 -->
-            <div class="demographic-box2">
+            <div class="demographic-box2 toLeft">
                   <h1> Demographic Profile </h1>
                <div class="input-forms">  
                   <div class="input-name">
@@ -127,14 +130,14 @@
                </div>
                
                <div class="buttons">
-                  <button id="back1"> Back </button>
-                  <button id="next2"> Next </button>
+                  <button id="back1" type="button"> Back </button>
+                  <button id="next2" type="button"> Next </button>
                </div>
             </div> 
            
 
             <!-- Contact and schedule -->
-            <div class="contact-sched">
+            <div class="contact-sched toLeft">
                <div class="input-forms">
                   <div class="contact">
                      <h1> Contact </h1>
@@ -169,26 +172,49 @@
                </div>
 
                <div class="buttons">
-                  <button id="back2"> Back </button>
-                  <button id="next3"> Next </button>
+                  <button id="back2" type="button"> Back </button>
+                  <button id="next3" type="button"> Next </button>
                </div>
             </div>
 
             <!-- Attach documents -->
-            <div class="documents">
-
+            <div class="documents toLeft">
+             <h1> Attach Documents </h1>
+               <div class="input-forms">  
+                     <div class="text-input">
+                        <label for="diploma"> Diploma </label>
+                        <input type="file" name="diploma" id="diploma">
+                     </div>
+                     <div class="text-input">
+                        <label for="grade"> SHS / 4<sup>th</sup> yr grade </label>
+                        <input type="file" id="grade" name="grade">
+                     </div>
+                     <div class="text-input">
+                        <label for="gdMoral"> Good Moral </label>
+                        <input type="file" id="gdMoral" name="gdMoral">
+                     </div>
+                     <div class="text-input">
+                        <label for="id2x2"> ID Picture (2x2) </label>
+                        <input type="file" id="id2x2" name="id2x2">
+                     </div>
+               </div>
+               <div class="buttons">
+                  <button id="back3" type="button"> Back </button>
+                  <input type="submit" value="Submit" name="submit" id="submit">
+                  </form>
+               </div>
             </div>
-
-
-
-
-         </div>
-
+      
       </div>
    </section>
+
+
+
 
    <footer>
         <p> &copy; 2020 Quezon City University </p>
    </footer>
 </body>
+
+<script src="../script/nextFill.js"></script>
 </html>
