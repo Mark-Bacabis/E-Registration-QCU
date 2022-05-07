@@ -1,0 +1,446 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+section{
+   height: 100vh;
+   width: 100%;
+   display: flex;
+   background-color: #F2F2F2;
+   overflow: hidden;
+}
+
+.side-navbar{
+   background-color: #1E2350;
+   width: 20%;
+   color: rgb(255, 255, 255);
+   position: relative;
+}
+
+.side-navbar .admin-profile{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+   padding: 50px 0;
+}
+
+
+.side-navbar .admin-profile .profile-pic{
+   width: 100px;
+   height: 100px;
+   background-color: #fff;
+   border-radius: 50%;
+   margin-bottom: 10px;
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
+.side-navbar .admin-profile .profile-pic img{
+   height: 100%;
+   width: 100%;
+}
+
+.side-navbar nav{
+   color: rgba(255, 255, 255, 0.479);
+}
+
+.side-navbar nav > div{
+   padding: 20px 15%;
+   text-align: center;
+   font-size: 1.2em;
+   cursor: pointer;
+}
+
+.side-navbar nav > div:hover{
+   background-color: rgba(255, 255, 255, 0.144);
+   color: rgb(255, 255, 255);
+}
+
+.current{
+   background-color: rgba(255, 255, 255, 0.144);
+   color: rgb(255, 255, 255);
+}
+
+
+.side-navbar footer {
+   position: absolute;
+   bottom: 0%;
+   padding: 20px;
+   text-align: center;
+   width: 100%;
+}
+
+.side-navbar footer p{
+   color: rgba(255, 255, 255, 0.445);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content-box{
+   width: 80%;
+   padding: 1.5% 4%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.content-box .header{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 10px;
+}
+
+.content-box .header .title{
+   display: flex;
+   align-items: center;
+}
+
+.content-box .header .title img{
+   width: 50px;
+   height: 50px;
+   margin-right: 20px;
+}
+
+.content-box .header .title h1{
+   text-transform: uppercase;
+}
+
+.content-box .header .profile-icon img{
+   width: 30px;
+   height: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DASHBOARD */
+.content-box .dashboard{
+   height: 100%;
+   padding: 10px 0;
+   display: flex;
+   flex-direction: column;
+}
+
+.content-box .dashboard .open-close-reg{
+   background-color: #1F222E;
+   display: flex;
+   align-items: center;
+   color: #fff;
+   padding: 10px 20px;
+   letter-spacing: 2px;
+   margin-bottom: 20px;
+   border-radius: 8px;
+}
+.content-box .dashboard .open-close-reg .on-off {
+   margin-left: 10px;
+   display: flex;
+}
+
+.content-box .dashboard .open-close-reg .on-off input{
+   display: block;
+}
+
+.content-box .dashboard .open-close-reg .on-off .isOn {
+   width: 40px;
+   height: 20px;
+   background-color: #fff;
+}
+
+
+.content-box .dashboard .dashboard-content{
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+
+.content-box .dashboard .dashboard-content .summary{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 20px;
+   height: 30%;
+}
+
+.content-box .dashboard .dashboard-content .summary .summary-box{
+   background-color: #2f51af;
+   width: 230px;
+   height: 120px;
+   border-radius: 7px;
+   color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 20px;
+   letter-spacing: 2px;
+   box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.288);
+}
+.content-box .dashboard .dashboard-content .summary .summary-box .icon{
+   width: 70px;
+   height: 70px;
+   overflow: hidden;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.content-box .dashboard .dashboard-content .summary .summary-box .icon img{
+   width: 100%;
+   height: 100%;
+}
+
+
+.content-box .dashboard .dashboard-content .summary .summary-box .text{
+   text-align: right;
+}
+
+.content-box .dashboard .dashboard-content .summary .summary-box .text h1{
+   font-size: 2em;
+}  
+
+
+
+.content-box .dashboard .dashboard-content .graph-log{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 100%;
+}
+
+.content-box .dashboard .dashboard-content .graph-log .chart{
+   width: 67%;
+   height: 100%;
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.13);
+}
+
+.content-box .dashboard .dashboard-content .graph-log .act-log{
+   width: 30%;
+   height: 100%;
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.13);
+}
+
+
+
+
+
+
+
+/* APPLICANTS */
+
+.applicants{
+   width: 100%;
+   height: 80%;
+   display: none;
+   flex-direction: column;
+}
+
+.applicants .title-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  margin-bottom: 10px;
+}
+
+.applicants .title-header .title h1{
+   font-size: 2em;
+   letter-spacing: 1px;
+}
+
+.applicants .title-header .search-list{
+   display: flex;
+   align-items: center;
+}
+
+.applicants .title-header .search-list .search{
+   margin-right: 10px;
+}
+
+.applicants .title-header .search-list .search input[type="search"]{
+   position: relative;
+   font-size: 1em;
+   outline: none;
+   padding: 4px 10px;
+   border-radius: 7px;
+   border: none;
+   width: 350px;
+}
+
+
+.applicants .tbl-applicant{
+   width: 100%;
+}
+
+.applicants .tbl-applicant tr > th{
+   width: max-content;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+   padding: 5px;
+   color: rgb(59, 59, 59);
+}
+
+.applicants .tbl-applicant tr > td{
+   text-align: center;
+   width: max-content;
+   padding: 5px;
+   background-color: #fff;
+}
+
+.applicants .tbl-applicant tr > td .img{
+   width: 70px;
+   height: 70px;
+   overflow: hidden;
+   background-color: #f0f0f0;
+   margin: auto;
+}
+
+.applicants .tbl-applicant tr > td .img img{
+   width: 100%;
+   height: 100%;
+}
+
+.applicants .tbl-applicant tr > td > button{
+   background: none;
+   border: none;
+   width: 30px;
+   height: 30px;
+   cursor: pointer;
+   border-radius: 50%;
+   box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.247);
+   margin: 0 2px;
+}
+
+.applicants .tbl-applicant tr > td > button > img{
+   width: 100%;
+   height: 100%;
+}
+
+
+
+
+
+
+
+.approved-applicants{
+   width: 100%;
+   height: 80%;
+   display: none;
+   flex-direction: column;
+}
+
+
+.approved-applicants .title-header{
+   display: flex;
+   align-items: center;
+   justify-content: space-between; 
+   margin-bottom: 10px;
+ }
+ 
+ .approved-applicants .title-header .title h1{
+    font-size: 2em;
+    letter-spacing: 1px;
+ }
+ 
+ .approved-applicants .title-header .search-list{
+    display: flex;
+    align-items: center;
+ }
+ 
+ .approved-applicants .title-header .search-list .search{
+    margin-right: 10px;
+ }
+ 
+ .approved-applicants .title-header .search-list .search input[type="search"]{
+    position: relative;
+    font-size: 1em;
+    outline: none;
+    padding: 4px 10px;
+    border-radius: 7px;
+    border: none;
+    width: 350px;
+ }
+ 
+ 
+ .approved-applicants .tbl-approved-applicant{
+    width: 100%;
+ }
+ 
+ .approved-applicants .tbl-approved-applicant tr > th{
+    width: max-content;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    color: rgb(59, 59, 59);
+ }
+ 
+ .approved-applicants .tbl-approved-applicant tr > td{
+    text-align: center;
+    width: max-content;
+    padding: 5px;
+    background-color: #fff;
+ }
+ 
+ .approved-applicants .tbl-approved-applicant tr > td .img{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    margin: auto;
+ }
+ 
+ .approved-applicants .tbl-approved-applicant tr > td .img img{
+    width: 100%;
+    height: 100%;
+ }
+ 
+ .approved-applicants .tbl-approved-applicant tr > td > .status{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: max-content;
+
+ }
+
+ .approved-applicants .tbl-approved-applicant tr > td > .status img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
