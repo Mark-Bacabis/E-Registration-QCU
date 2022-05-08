@@ -8,7 +8,6 @@
    <title> QCU E-Registration </title>
 </head>
 <body>
-
    <section>
       <div class="side-navbar">
          <div class="admin-profile">
