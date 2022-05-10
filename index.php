@@ -6,7 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./css/styles.css">
-   <title> Quezon City Universityyyyyyy Sample </title>
+   <title> Quezon City Universityyyyyyy Sample lwolwow </title>
 </head>
 <body>
 
