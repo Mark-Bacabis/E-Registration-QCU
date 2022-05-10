@@ -23,7 +23,7 @@
 
          <nav>
             <ul class="main-nav">
-               <li> <a href="#"> Hoooooomeeeeeeeeeeeeee </a> </li>
+               <li> <a href="#"> Home </a> </li>
                <li> <a href="#"> Contact </a> </li>
                <li> <a href="#"> About </a> </li>
             </ul>
