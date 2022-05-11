@@ -2,6 +2,7 @@
    include "../php/db_connection.php";
    include "../php/select.php";
    include "../php/join.php";
+   include "../php/count.php";
 
 ?>
 <!DOCTYPE html>
@@ -13,6 +14,13 @@
    <link rel="stylesheet" href="../css/dashboard.css">
    <title> QCU E-Registration </title>
 </head>
+
+ <!-- AJAX PLUGINS -->
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+ <!-- AJAX FILES -->
+<script src="../ajax/ActionApplicant.js"></script>
+
 <body>
    <section>
       <div class="side-navbar">
@@ -70,7 +78,7 @@
                         <img src="../img/icons/wfacebook.png" alt="">
                      </div>
                      <div class="text">
-                        <h1> 1024 </h1>
+                        <h1> <?=$cntApplicant['total']?> </h1>
                         <p> Applicants </p>
                      </div>
                   </div>
@@ -80,8 +88,8 @@
                         <img src="../img/icons/wfacebook.png" alt="">
                      </div>
                      <div class="text">
-                        <h1> 1024 </h1>
-                        <p> Applicants </p>
+                        <h1> <?=$cntPending['total']?> </h1>
+                        <p> Pending </p>
                      </div>
                   </div>
 
@@ -90,8 +98,8 @@
 
                      </div>
                      <div class="text">
-                        <h1> 1024 </h1>
-                        <p> Applicants </p>
+                        <h1> <?=$cntApproved['total']?> </h1>
+                        <p> Approved </p>
                      </div>
                   </div>
 
@@ -100,8 +108,8 @@
 
                      </div>
                      <div class="text">
-                        <h1> 1024 </h1>
-                        <p> Applicants </p>
+                        <h1> <?=$cntDeclined['total']?> </h1>
+                        <p> Declined </p>
                      </div>
                   </div>
                </div>
@@ -153,15 +161,15 @@
                if(mysqli_num_rows($joinAppQuery) > 0){
                   while($rows = mysqli_fetch_assoc( $joinAppQuery)){ ?>
                <tr>
-                  <td> <?=$rows['reg_num']?> </td>
-                  <td> <?=$rows['First_Name']?> <?=$rows['Middle_Name']?> <?=$rows['Last_Name']?> <?=$rows['Extension_Name']?></td>
-                  <td> <?=$rows['email']?> </td>
+                  <td> <div id="reg_num"> <?=$rows['reg_num']?> </div></td>
+                  <td> <div id="fullname"> <?=$rows['First_Name']?> <?=$rows['Middle_Name']?> <?=$rows['Last_Name']?> <?=$rows['Extension_Name']?> </div> </td>
+                  <td> <div id="email"> <?=$rows['email']?> </div> </td>
                   <td> <img src="../img/upload_documents/<?=$rows['gradeslip']?>" alt="" class="gwa-img"></td>
                   <td> <span style="font-size: .8em;"> <?=$rows['Date']?> <br> <?=$rows['StartTime']?> : <?=$rows['EndTime']?> </span></td>
                   <td> <?=$rows['status']?></td>
                   <td> 
-                     <button> <img src="../img/icons/checked.png" alt=""></button> 
-                     <button> <img src="../img/icons/cancel.png" alt=""> </button>
+                     <button data-role="approve" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/checked.png" alt=""></button> 
+                     <button data-role="approve" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/cancel.png" alt=""> </button>
                   </td>
                </tr>
             <?php }
