@@ -1,3 +1,9 @@
+<?php
+   include "../php/db_connection.php";
+   include "../php/select.php";
+   include "../php/join.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,42 +129,47 @@
                   <div class="search">
                      <input type="search" name="search" id="search" placeholder="Search">
                   </div>
-                  <div class="list">
-                     <p> 5/30 </p>
-                  </div>
+                  
 
                </div>
             </div>
 
+            <div class="tbl-box">
+
+            
+
             <table class="tbl-applicant" border="0">
                <tr>
-                  <th> # </th>
+                  
                   <th> Reg No. </th>
-                  <th> 2x2 </th>
                   <th> Fullname </th>
                   <th> Email </th>
                   <th> GWA </th>
                   <th> Schedule </th>
+                  <th> Status </th>
                   <th> Action </th>
                </tr>
+            <?php 
+               if(mysqli_num_rows($joinAppQuery) > 0){
+                  while($rows = mysqli_fetch_assoc( $joinAppQuery)){ ?>
                <tr>
-                  <td> 1 </td>
-                  <td> REG20220001 </td>
-                  <td> 
-                     <div class="img">
-                        <img src="" alt="">
-                     </div>
-                  </td>
-                  <td> Mark Melvin E. Bacabis </td>
-                  <td> mark.melvin.bacabis@gmail.com </td>
-                  <td> </td>
-                  <td> <span style="font-size: .8em;"> 05/08 (Sun) <br> 9AM-10AM </span></td>
+                  <td> <?=$rows['reg_num']?> </td>
+                  <td> <?=$rows['First_Name']?> <?=$rows['Middle_Name']?> <?=$rows['Last_Name']?> <?=$rows['Extension_Name']?></td>
+                  <td> <?=$rows['email']?> </td>
+                  <td> <img src="../img/upload_documents/<?=$rows['gradeslip']?>" alt="" class="gwa-img"></td>
+                  <td> <span style="font-size: .8em;"> <?=$rows['Date']?> <br> <?=$rows['StartTime']?> : <?=$rows['EndTime']?> </span></td>
+                  <td> <?=$rows['status']?></td>
                   <td> 
                      <button> <img src="../img/icons/checked.png" alt=""></button> 
                      <button> <img src="../img/icons/cancel.png" alt=""> </button>
                   </td>
                </tr>
+            <?php }
+               }
+            ?>
+               
             </table>
+            </div>
          </div>
 
          <!-- APPROVED -->
@@ -213,8 +224,17 @@
          </div>
       </div>
    </section>
-   
+
+   <div class="gwa-viewer" id="gwa-viewer">
+      <div class="close">
+         <p> + </p>
+      </div>
+      <img id="gwa-img-clicked" src="" alt="">
+   </div>
+
+
 </body>
 
 <script src="../script/sidenav.js"></script>
+<script src="../script/admin-img.js"></script>
 </html>

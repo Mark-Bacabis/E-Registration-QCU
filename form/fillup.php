@@ -1,3 +1,8 @@
+<?php
+   include "../php/db_connection.php";
+   include "../php/select.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +53,7 @@
                         <input type="text" id="mname" name="mname">
                      </div>
                      <div class="text-input">
-                        <label for="ext"> Extension <span style="color:red;font-size:.8em"> *put N/A if not applicable </span> </label>
+                        <label for="ext"> Extension <span style="color:red;font-size:.8em"> *leave attended if not applicable </span> </label>
                         <input type="text" id="ext" name="ext">
                      </div>
                   </div>
@@ -157,15 +162,38 @@
 
                      <div class="text-input">
                         <label for="schedDate"> Date </label>
-                        <input type="text" id="schedDate" name="schedDate">
+                        <select name="schedDate" id="schedDate">
+                           <?php
+                              if(mysqli_num_rows($dateQuery) > 0){
+                                 while($rows = mysqli_fetch_assoc($dateQuery)){?>
+                                    <option> <?=$rows['Date']?> </option>
+                                 <?php }
+                              } else{ ?>
+                                 <option> No available </option>
+                              <?php }
+                           ?>
+                           
+                        </select>
+                        
                      </div>
                      <div class="text-input">
                         <label for="schedTime"> Time </label>
-                        <input type="text" id="schedTime" name="schedTime">
+                        <select name="schedTime" id="schedTime">
+                           <?php
+                              if(mysqli_num_rows($schedQuery) > 0 && ($slot['Slot'] > 0 && $slot['Slot'] <= 10)){
+                                 while($rows = mysqli_fetch_assoc($schedQuery)){?>
+                                    <option> <?=$rows['StartTime']?> - <?=$rows['EndTime']?> </option>
+                                 <?php }
+                              } else{ ?>
+                                 <option> No available </option>
+                              <?php }
+                           ?>
+                           
+                        </select>
                      </div>
                      <div class="text-input">
                         <label for="slot"> Slot </label>
-                        <input type="text" id="slot" name="slot" disabled>
+                        <input type="text" id="slot" name="slot" value="<?=$slot['Slot']?>" disabled>
                      </div>
                   
                   </div>
