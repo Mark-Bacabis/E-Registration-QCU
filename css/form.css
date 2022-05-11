@@ -35,7 +35,8 @@ header img{
 
 /* BUTTONS */
 
-.buttons{
+
+.buttons,input[type="submit"]{
    display: flex;
    align-items: center;
    justify-content: center;
@@ -43,7 +44,7 @@ header img{
    float: right;
 }
 
-.buttons button{
+.buttons button,input[type="submit"]{
    padding: 5px 10px;
    color: white;
    border-radius: 3px;
@@ -216,7 +217,7 @@ section .form-box .form-fill-box .text-input input, .text-input select{
 }
 
 
-section .form-box .form-fill-box .demographic-box .buttons{
+section .form-box .form-fill-box .demographic-box .buttons,input[type="submit"]{
    display: flex;
    align-items: center;
    justify-content: center;
@@ -224,7 +225,7 @@ section .form-box .form-fill-box .demographic-box .buttons{
    float: right;
 }
 
-section .form-box .form-fill-box .demographic-box .buttons button{
+section .form-box .form-fill-box .demographic-box .buttons button,input[type="submit"]{
    padding: 5px 10px;
    color: white;
    border-radius: 7px;

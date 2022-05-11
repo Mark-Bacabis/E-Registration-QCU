@@ -29,134 +29,56 @@
             </div>
          </div>   
 
-        
+        <?php
+if (isset($_POST['submit'])) {
+ $status = addstudent($_POST['lname'],$_POST['fname'], $_POST['mname'],$_POST['exname'],$_POST['zipCode'],$_POST['hNoStrt'],$_POST['brgy'],$_POST['city'], $_POST['bdate'],$_POST['bplace'],$_POST['age'],$_POST['sex'],$_POST['cStatus'],$_POST['religion'],$_POST['cNum'],$_POST['email'],$_POST['schedDate'],$_POST['schedTime'],$_POST['schedslot'],$_POST['diploma'],$_POST['grade'],$_POST['gdMoral'],$_POST['id2x2']);
+}
+
+
+ ?>
 
          <div class="form-fill-box">
-         <?php 
-            $lname = "";
-            $fname = "";
-            $mname = "";
-            $ext = "";
-            $bdate = "";
-            $PoB = "";
-            $age = "";
-            $sex = "";
-            $lnameerr = "";
-            $fnameerr = "";
-            $mnameerr = "";
-            $exterr = "";
-            $bdateerr = "";
-            $poberr = "";
-            $ageerr = "";
-            $sexerr = "";
 
-            if($_SERVER["REQUEST_METHOD"] == "POST"){
-               if (empty($_POST["lname"])){
-                  $lnameerr = "Lastname is required";
-               }
-               else{
-                  $lname = test_input($_POST["lname"]);
-               }
-               if (empty($_POST["fname"])){
-                  $fnameerr = "Firstname is required";
-               }
-               else{
-                  $fname = test_input($_POST["fname"]);
-               }
-               if (empty($_POST["mname"])){
-                  $mnameerr = "Middlename is required";
-               }
-               else{
-                  $mname = test_input($_POST["mname"]);
-               }
-               if (empty($_POST["ext"])){
-                  $exterr = "Extension is required";
-               }
-               else{
-                  $ext = test_input($_POST["ext"]);
-               }
-               if (empty($_POST["bdate"])){
-                  $bdateerr = "Birthday is required";
-               }
-               else{
-                  $bday = test_input($_POST["bday"]);
-               }
-               if (empty($_POST["PoB"])){
-                  $poberr = "Place of Birth is required";
-               }
-               else{
-                  $pob = test_input($_POST["PoB"]);
-               }
-               if (empty($_POST["age"])){
-                  $ageerr = "Age is required";
-               }
-               else{
-                  $age = test_input($_POST["age"]);
-               }
-               if (empty($_POST["sex"])){
-                  $sexerr = "Sex is required";
-               }
-               else{
-                  $sex = test_input($_POST["sex"]);
-               }
-               if (empty($_POST["diploma"])){ //1222222222222222222222222222222222
-                  $diplomaerr = "Diploma is required";//12222222222222222222222222222222222
-               }
-               else{
-                  $diploma = test_input($_POST["diploma"]);
-               }
-            }
-
-            function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-            }
-
-
-         ?>
-         
             <!-- Demographic 1 -->
             <div class="demographic-box">
-               <form action="" method="post">
+               <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
                   <h1> Demographic Profile </h1>
                <div class="input-forms">  
                   <div class="input-name">
                      <div class="text-input">
-                        <label for="lname"> Lastname </label>
-                        <input type="text" id="lname" name="lname">
+                        <label for="lname"> Lastname <span style="font-size: 15px;color:red;" id="error1"></span></label>
+                        <input type="text" id="lname" name="lname" onblur="checkTextFieldln(this);" required>
                      </div>
                      <div class="text-input">
-                        <label for="fname"> Firstname </label>
-                        <input type="text" id="fname" name="fname">
+                        <label for="fname"> Firstname <span style="font-size: 15px;color:red;" id="error2"></label>
+                        <input type="text" id="fname" name="fname" onblur="checkTextFieldfn(this);" required>
                      </div>
                      <div class="text-input">
-                        <label for="mname"> Middlename </label>
-                        <input type="text" id="mname" name="mname">
+                        <label for="mname"> Middlename <span style="font-size: 15px;color:red;" id="error3"></label>
+                        <input type="text" id="mname" name="mname" onblur="checkTextFieldmn(this);" required>
                      </div>
                      <div class="text-input">
                         <label for="ext"> Extension <span style="color:red;font-size:.8em"> *leave attended if not applicable </span> </label>
-                        <input type="text" id="ext" name="ext">
+                        <input type="text" id="ext" name="exname" required>
                      </div>
                   </div>
 
                   <div class="input-other">
                      <div class="text-input">
-                        <label for="bdate"> Birth date </label>
-                        <input type="date" id="bdate" name="bdate">
+                        <label for="bdate"> Birth date <span style="font-size: 15px;color:red;" id="error5"></label>
+                        <input type="date" id="bdate" name="bdate" onblur="checkTextFieldbd(this);" required>
                         
                      </div>
                      <div class="text-input">
-                        <label for="PoB"> Place of Birth </label>
-                        <input type="text" id="PoB" name="PoB">
+                        <label for="PoB"> Place of Birth <span style="font-size: 15px;color:red;" id="error6"></label>
+                        <input type="text" id="PoB" name="bplace" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
-                        <label for="age"> Age </label>
-                        <input type="number" id="age" name="age" maxlength="2" minlength="1" min="1" max="40">
+                        <label for="age"> Age <span style="font-size: 15px;color:red;" id="error7"></label>
+                        <input type="number" id="age" name="age" maxlength="2" minlength="1" min="1" max="40" onblur="checkTextFieldage(this);" required>
                      </div>
                      <div class="text-input">
-                        <label for="sex"> Sex</label>
+                        <label for="sex"> Sex <span style="font-size: 15px;color:red;" id="error8"></label>
                         <select name="sex" id="sex">
                            <option value="M"> Male </option>
                            <option value="F"> Female </option>
@@ -167,9 +89,9 @@
                
                <div class="buttons">
                   <a href="../index.php" id="cancel"> Cancel </a>
-                  <button id="next1" type="button"> Next </button>
+                  <button id="next1" type="submit"> Next </button>
                </div>
-            </div>  
+            </div>
             
 
             <!-- Demographic 2 -->
@@ -179,19 +101,19 @@
                   <div class="input-name">
                      <div class="text-input">
                         <label for="zipCode"> Zip Code </label>
-                        <input type="text" id="zipCode" name="zipCode">
+                        <input type="text" id="zipCode" name="zipCode" required>
                      </div>
                      <div class="text-input">
                         <label for="hNoStrt"> House No. and Street </label>
-                        <input type="text" id="hNoStrt" name="hNoStrt">
+                        <input type="text" id="hNoStrt" name="hNoStrt" required>
                      </div>
                      <div class="text-input">
                         <label for="brgy"> Barangay</label>
-                        <input type="text" id="brgy" name="brgy">
+                        <input type="text" id="brgy" name="brgy" required>
                      </div>
                      <div class="text-input">
                         <label for="city"> City </label>
-                        <input type="text" id="city" name="city">
+                        <input type="text" id="city" name="city" required>
                      </div>
                   </div>
 
@@ -208,11 +130,11 @@
                      </div>
                      <div class="text-input">
                         <label for="nationality"> Nationality </label>
-                        <input type="text" id="nationality" name="nationality">
+                        <input type="text" id="nationality" name="nationality" required>
                      </div>
                      <div class="text-input">
                         <label for="religion"> Religion </label>
-                        <input type="text" id="religion" name="religion" maxlength="2" minlength="1" min="1" max="40">
+                        <input type="text" id="religion" name="religion" maxlength="2" minlength="1" min="1" max="40" required>
                      </div>
                   </div>
                </div>
@@ -248,8 +170,10 @@
                         <select name="schedDate" id="schedDate">
                            <?php
                               if(mysqli_num_rows($dateQuery) > 0){
-                                 while($rows = mysqli_fetch_assoc($dateQuery)){?>
-                                    <option> <?=$rows['Date']?> </option>
+                                 while($rows = mysqli_fetch_assoc($dateQuery)){
+                                    $datetime = date("Y/m/d",$rows['Date']);
+                                    ?>
+                                    <option> <?php echo $datetime; ?> </option>
                                  <?php }
                               } else{ ?>
                                  <option> No available </option>
@@ -265,7 +189,7 @@
                            <?php
                               if(mysqli_num_rows($schedQuery) > 0 && ($slot['Slot'] > 0 && $slot['Slot'] <= 10)){
                                  while($rows = mysqli_fetch_assoc($schedQuery)){?>
-                                    <option> <?=$rows['StartTime']?> - <?=$rows['EndTime']?> </option>
+                                    <option> <?=$rows['StartTime']?>-<?=$rows['EndTime']?> </option>
                                  <?php }
                               } else{ ?>
                                  <option> No available </option>
@@ -276,7 +200,7 @@
                      </div>
                      <div class="text-input">
                         <label for="slot"> Slot </label>
-                        <input type="text" id="slot" name="slot" value="<?=$slot['Slot']?>" disabled>
+                        <input type="text" id="slot" name="schedslot" value="<?=$slot['Slot']?>">
                      </div>
                   
                   </div>
