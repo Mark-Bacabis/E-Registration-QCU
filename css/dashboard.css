@@ -140,10 +140,41 @@ section{
 
 
 
+/* Off/On registration */
+.on-off{
+   margin-left: 20px;
+}
+.on-off .label{
+   position: relative;
+   height: 24px;
+   width: 48px;
+   border: 2px solid rgb(155, 155, 155);
+   display: flex;
+   border-radius: 50px;
+}
 
+.on-off .label .ball{
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 20px;
+   height: 20px;
+   background-color: rgb(155, 155, 155);
+   border-radius: 50%;
+   transition: all linear .2s;
+}
 
+.on-off #checkbox{
+   display: none;
+}
+#checkbox:checked + .label{
+   border: 2px solid #fff;
+}
 
-
+#checkbox:checked + .label .ball{
+   transform: translateX(24px);
+   background-color: rgb(255, 255, 255);
+}
 
 
 
@@ -161,28 +192,13 @@ section{
    background-color: #1F222E;
    display: flex;
    align-items: center;
+   justify-content: space-between;
    color: #fff;
    padding: 10px 20px;
    letter-spacing: 2px;
    margin-bottom: 20px;
    border-radius: 8px;
 }
-.content-box .dashboard .open-close-reg .on-off {
-   margin-left: 10px;
-   display: flex;
-}
-
-.content-box .dashboard .open-close-reg .on-off input{
-   display: block;
-}
-
-.content-box .dashboard .open-close-reg .on-off .isOn {
-   width: 40px;
-   height: 20px;
-   background-color: #fff;
-}
-
-
 .content-box .dashboard .dashboard-content{
    display: flex;
    flex-direction: column;
@@ -198,7 +214,7 @@ section{
 }
 
 .content-box .dashboard .dashboard-content .summary .summary-box{
-   background-color: #2f51af;
+  
    width: 230px;
    height: 120px;
    border-radius: 7px;
@@ -206,15 +222,33 @@ section{
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 10px 20px;
+   padding: 10px 25px;
    letter-spacing: 2px;
    box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.288);
 }
+
+.content-box .dashboard .dashboard-content .summary .summary-box.applicants-summary{
+   background-color: #2f51af;
+}
+
+.content-box .dashboard .dashboard-content .summary .summary-box.pending{
+  
+   background-color:  #952faf;
+}
+
+.content-box .dashboard .dashboard-content .summary .summary-box.approved{
+   background-color: #2faf73;
+}
+
+.content-box .dashboard .dashboard-content .summary .summary-box.declined{
+   background-color: #af2f2f;
+}
+
+
 .content-box .dashboard .dashboard-content .summary .summary-box .icon{
-   width: 70px;
-   height: 70px;
+   width: 50px;
+   height: 50px;
    overflow: hidden;
-   border-radius: 50%;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -223,6 +257,7 @@ section{
 .content-box .dashboard .dashboard-content .summary .summary-box .icon img{
    width: 100%;
    height: 100%;
+   filter: invert(1);
 }
 
 

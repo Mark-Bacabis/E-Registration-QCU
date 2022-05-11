@@ -22,7 +22,6 @@
 
  <!-- AJAX FILES -->
 <script src="../ajax/ActionApplicant.js"></script>
-
 <body>
    <section>
       <div class="side-navbar">
@@ -66,18 +65,18 @@
             <div class="open-close-reg">
                <h3> Registration </h3>
                <div class="on-off">
-                  <input type="checkbox" name="isOn" id="isOn">
-                  <label for="isOn">
-                     <div class="isOn"> </div>
+                  <input type="checkbox" name="checkbox" id="checkbox">
+                  <label for="checkbox" class="label">
+                     <div class="ball"></div>
                   </label>
                </div>
             </div>
 
             <div class="dashboard-content">
                <div class="summary">
-                  <div class="summary-box pending"> 
+                  <div class="summary-box applicants-summary"> 
                      <div class="icon">
-                        <img src="../img/icons/wfacebook.png" alt="">
+                        <img src="../img/icons/student-with-graduation-cap.png" alt="">
                      </div>
                      <div class="text">
                         <h1> <?=$cntApplicant['total']?> </h1>
@@ -85,9 +84,9 @@
                      </div>
                   </div>
 
-                  <div class="summary-box applicant-sumamry"> 
+                  <div class="summary-box pending"> 
                      <div class="icon">
-                        <img src="../img/icons/wfacebook.png" alt="">
+                        <img src="../img/icons/file.png" alt="">
                      </div>
                      <div class="text">
                         <h1> <?=$cntPending['total']?> </h1>
@@ -97,7 +96,7 @@
 
                   <div class="summary-box approved"> 
                      <div class="icon">
-
+                        <img src="../img/icons/file (1).png" alt="">
                      </div>
                      <div class="text">
                         <h1> <?=$cntApproved['total']?> </h1>
@@ -107,7 +106,7 @@
 
                   <div class="summary-box declined"> 
                      <div class="icon">
-
+                        <img src="../img/icons/file (2).png" alt="">
                      </div>
                      <div class="text">
                         <h1> <?=$cntDeclined['total']?> </h1>
@@ -118,7 +117,7 @@
 
                <div class="graph-log">
                   <div class="chart">
-                     
+                    
                   </div>
                   <div class="act-log">
 
@@ -253,6 +252,9 @@
 
 </body>
 
+<script src="">
+   let myChart = document.getElementById('myChart').getContext('2d');
+</script>
 <script src="../script/sidenav.js"></script>
 <script src="../script/admin-img.js"></script>
 </html>
