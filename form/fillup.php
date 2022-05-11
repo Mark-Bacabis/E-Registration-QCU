@@ -32,7 +32,90 @@
         
 
          <div class="form-fill-box">
+         <?php 
+            $lname = "";
+            $fname = "";
+            $mname = "";
+            $ext = "";
+            $bdate = "";
+            $PoB = "";
+            $age = "";
+            $sex = "";
+            $lnameerr = "";
+            $fnameerr = "";
+            $mnameerr = "";
+            $exterr = "";
+            $bdateerr = "";
+            $poberr = "";
+            $ageerr = "";
+            $sexerr = "";
 
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
+               if (empty($_POST["lname"])){
+                  $lnameerr = "Lastname is required";
+               }
+               else{
+                  $lname = test_input($_POST["lname"]);
+               }
+               if (empty($_POST["fname"])){
+                  $fnameerr = "Firstname is required";
+               }
+               else{
+                  $fname = test_input($_POST["fname"]);
+               }
+               if (empty($_POST["mname"])){
+                  $mnameerr = "Middlename is required";
+               }
+               else{
+                  $mname = test_input($_POST["mname"]);
+               }
+               if (empty($_POST["ext"])){
+                  $exterr = "Extension is required";
+               }
+               else{
+                  $ext = test_input($_POST["ext"]);
+               }
+               if (empty($_POST["bdate"])){
+                  $bdateerr = "Birthday is required";
+               }
+               else{
+                  $bday = test_input($_POST["bday"]);
+               }
+               if (empty($_POST["PoB"])){
+                  $poberr = "Place of Birth is required";
+               }
+               else{
+                  $pob = test_input($_POST["PoB"]);
+               }
+               if (empty($_POST["age"])){
+                  $ageerr = "Age is required";
+               }
+               else{
+                  $age = test_input($_POST["age"]);
+               }
+               if (empty($_POST["sex"])){
+                  $sexerr = "Sex is required";
+               }
+               else{
+                  $sex = test_input($_POST["sex"]);
+               }
+               if (empty($_POST["diploma"])){ //1222222222222222222222222222222222
+                  $diplomaerr = "Diploma is required";//12222222222222222222222222222222222
+               }
+               else{
+                  $diploma = test_input($_POST["diploma"]);
+               }
+            }
+
+            function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+            }
+
+
+         ?>
          
             <!-- Demographic 1 -->
             <div class="demographic-box">
