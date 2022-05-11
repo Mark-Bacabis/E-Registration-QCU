@@ -6,13 +6,13 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./css/styles.css">
-   <title> Quezon City Universityyyyyyy Sample lwolwow </title>
+   <title> Quezon City University </title>
 </head>
 <body>
 
-   <div class="button-fixed">
+   <!--<div class="button-fixed">
       <p> Shop now </p>
-   </div>
+   </div>-->
 
    <!-- header --> 
    <div class="header">

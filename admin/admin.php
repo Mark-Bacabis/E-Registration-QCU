@@ -55,7 +55,7 @@
             </div>
 
             <div class="profile-icon">
-               <img src="../img/Icons/twitter.png" alt="">
+               <img src="../img/Icons/mechanical-gears-.png" alt="">
             </div>
          </div>
 
