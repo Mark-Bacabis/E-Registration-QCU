@@ -13,6 +13,6 @@
    $selApplicants = "SELECT * FROM `stud_application`";
    $applicantsQuery = mysqli_query($con, $selApplicants);
 
-
+   
 
 ?>

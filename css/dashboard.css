@@ -366,9 +366,11 @@ section{
    cursor: pointer;
 }
 
-.applicants .tbl-applicant tr > td > .gwa-img:hover{
-   
+.applicants .tbl-applicant tr > td > .id-pic{
+   width: 60px;
+   height: 60px;
 }
+
 
 
 
@@ -387,6 +389,7 @@ section{
    align-items: center;
    justify-content: space-between; 
    margin-bottom: 10px;
+   padding: 0 2%;
  }
  
  .approved-applicants .title-header .title h1{

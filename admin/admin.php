@@ -4,6 +4,8 @@
    include "../php/join.php";
    include "../php/count.php";
 
+   //echo $cntApproved['total'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +85,7 @@
                      </div>
                   </div>
 
-                  <div class="summary-box pending"> 
+                  <div class="summary-box applicant-sumamry"> 
                      <div class="icon">
                         <img src="../img/icons/wfacebook.png" alt="">
                      </div>
@@ -142,7 +144,7 @@
                </div>
             </div>
 
-            <div class="tbl-box">
+            <div class="tbl-box" id="tbl-box">
 
             
 
@@ -150,6 +152,7 @@
                <tr>
                   
                   <th> Reg No. </th>
+                  <th> 2x2 </th>
                   <th> Fullname </th>
                   <th> Email </th>
                   <th> GWA </th>
@@ -162,6 +165,7 @@
                   while($rows = mysqli_fetch_assoc( $joinAppQuery)){ ?>
                <tr>
                   <td> <div id="reg_num"> <?=$rows['reg_num']?> </div></td>
+                  <td> <img src="../img/upload_documents/<?=$rows['id_front']?>" alt="" class="id-pic"></td>
                   <td> <div id="fullname"> <?=$rows['First_Name']?> <?=$rows['Middle_Name']?> <?=$rows['Last_Name']?> <?=$rows['Extension_Name']?> </div> </td>
                   <td> <div id="email"> <?=$rows['email']?> </div> </td>
                   <td> <img src="../img/upload_documents/<?=$rows['gradeslip']?>" alt="" class="gwa-img"></td>
@@ -169,7 +173,7 @@
                   <td> <?=$rows['status']?></td>
                   <td> 
                      <button data-role="approve" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/checked.png" alt=""></button> 
-                     <button data-role="approve" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/cancel.png" alt=""> </button>
+                     <button data-role="decline" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/cancel.png" alt=""> </button>
                   </td>
                </tr>
             <?php }
@@ -201,33 +205,39 @@
                <tr>
                   
                   <th> Application # </th>
-                  <th> 2x2 </th>
                   <th> Fullname </th>
                   <th> Email </th>
                   <th> GWA </th>
                   <th> Schedule </th>
                   <th> Status </th>
                </tr>
-               <tr>
-                  <td> APP20220001 </td>
+               <?php 
+                  if(mysqli_num_rows($joinAppQueryApproved) > 0){
+                     while($rows = mysqli_fetch_assoc($joinAppQueryApproved)){ ?>
+                          <tr>
+                  <td> <?=$rows['app_num']?> </td>
+                 
+                  <td> <?=$rows['fullname']?> </td>
+                  <td> <?=$rows['email']?> </td>
                   <td> 
                      <div class="img">
-                        <img src="" alt="">
+                        <img src="../img/upload_documents/<?=$rows['id_front']?>" alt="">
                      </div>
                   </td>
-                  <td> Mark Melvin E. Bacabis </td>
-                  <td> mark.melvin.bacabis@gmail.com </td>
-                  <td> </td>
                   <td> 
-                     <span style="font-size: .8em;"> 05/08 (Sun) <br> 9AM-10AM </span>
+                     <span style="font-size: .8em;"> <?=$rows['schedule']?> </span>
                   </td>
                   <td> 
                      <div class="status">
                         <img src="../img/Icons/checked.png" alt=""> 
-                        <p> Approved </p>
+                        <p> <?=$rows['status']?> </p>
                      </div>
                   </td>
                </tr>
+                  <?php   }
+                  }
+               ?>
+             
             </table>
          </div>
       </div>
