@@ -17,15 +17,9 @@ var demographContainer2 = document.querySelector('.demographic-box2');
 var contactSched = document.querySelector('.contact-sched');
 var documentContainer = document.querySelector('.documents');
 
-<<<<<<< Updated upstream
-nxtButton1.addEventListener('onclick', function() {
-   if(document.getElementById("lname").value.trim() != "" || document.getElementById("fname").value.trim() != "" || document.getElementById("mname").value.trim() != ""|| document.getElementById("bdate").value.trim() != ""|| document.getElementById("PoB").value.trim() != ""|| document.getElementById("age").value.trim() != ""|| document.getElementById("sex").value.trim() != ""){
-=======
-
 nxtButton1.addEventListener('click', function() {
    /*if(document.getElementById("lname").value.trim() != "" || document.getElementById("fname").value.trim() != "" || document.getElementById("mname").value.trim() != ""|| document.getElementById("bdate").value.trim() != ""|| document.getElementById("PoB").value.trim() != ""|| document.getElementById("age").value.trim() != ""){ */
   
->>>>>>> Stashed changes
    progressNumber[1].classList.add('current');
    demographContainer1.classList.add('toLeft');
    demographContainer2.classList.remove('toLeft');

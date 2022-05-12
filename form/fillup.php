@@ -32,13 +32,8 @@
          <div class="form-fill-box">
 
             <!-- Demographic 1 -->
-<<<<<<< Updated upstream
-            <div class="demographic-box ">
-               <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
-=======
             <div class="demographic-box">
                
->>>>>>> Stashed changes
                   <h1> Demographic Profile </h1>
                <div class="input-forms">  
                   <div class="input-name">
@@ -55,13 +50,8 @@
                         <input type="text" id="mname" name="mname" >
                      </div>
                      <div class="text-input">
-<<<<<<< Updated upstream
                         <label for="ext"> Extension <span style="color:blue;font-size:.8em"> *leave attended if not applicable </span> </label>
                         <input type="text" id="ext" name="exname">
-=======
-                        <label for="ext"> Extension <span style="color:red;font-size:.8em"> *leave attended if not applicable </span> </label>
-                        <input type="text" id="ext" name="exname" >
->>>>>>> Stashed changes
                      </div>
                   </div>
 
@@ -93,11 +83,7 @@
                
                <div class="buttons">
                   <a href="../index.php" id="cancel"> Cancel </a>
-<<<<<<< Updated upstream
                   <button type="submit" id="next1" > Next </button>
-=======
-                  <button id="next1" type=""> Next </button>
->>>>>>> Stashed changes
                </div>
             </div>
             
@@ -109,7 +95,6 @@
                   <div class="input-name">
                      <div class="text-input">
                         <label for="zipCode"> Zip Code </label>
-<<<<<<< Updated upstream
                         <input type="text" id="zipCode" name="zipCode" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
@@ -123,21 +108,6 @@
                      <div class="text-input">
                         <label for="city"> City </label>
                         <input type="text" id="city" name="city" onblur="checkTextFieldpb(this);" required>
-=======
-                        <input type="text" id="zipCode" name="zipCode" d>
-                     </div>
-                     <div class="text-input">
-                        <label for="hNoStrt"> House No. and Street </label>
-                        <input type="text" id="hNoStrt" name="hNoStrt" d>
-                     </div>
-                     <div class="text-input">
-                        <label for="brgy"> Barangay</label>
-                        <input type="text" id="brgy" name="brgy" d>
-                     </div>
-                     <div class="text-input">
-                        <label for="city"> City </label>
-                        <input type="text" id="city" name="city" d>
->>>>>>> Stashed changes
                      </div>
                   </div>
 
@@ -155,19 +125,11 @@
                      </div>
                      <div class="text-input">
                         <label for="nationality"> Nationality </label>
-<<<<<<< Updated upstream
                         <input type="text" id="nationality" name="nationality" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
                         <label for="religion"> Religion </label>
                         <input type="text" id="religion" name="religion" maxlength="2" minlength="1" min="1" max="40" onblur="checkTextFieldpb(this);" required>
-=======
-                        <input type="text" id="nationality" name="nationality" >
-                     </div>
-                     <div class="text-input">
-                        <label for="religion"> Religion </label>
-                        <input type="text" id="religion" name="religion" maxlength="2" minlength="1" min="1" max="40" >
->>>>>>> Stashed changes
                      </div>
                   </div>
                </div>
