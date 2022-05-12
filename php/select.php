@@ -13,7 +13,11 @@
    $selApplicants = "SELECT * FROM `stud_application`";
    $applicantsQuery = mysqli_query($con, $selApplicants);
 
-   function addstudent($lname,$fname,$mname,$exname,$address1,$address2,$address3,$address4,$bdate,$bplace,$age,$sex,$cstatus,$religion,$cpnumber,$email,$date,$time,$slot,$diploma,$grade,$goodmoral,$p2x2){
+
+
+
+/*
+function addstudent($lname,$fname,$mname,$exname,$address1,$address2,$address3,$address4,$bdate,$bplace,$age,$sex,$cstatus,$religion,$cpnumber,$email,$date,$time,$slot,$diploma,$grade,$goodmoral,$p2x2){
    $conn = $GLOBALS['con'];
    $conn1 = $GLOBALS['con'];
    $conn2 = $GLOBALS['con'];
@@ -57,6 +61,6 @@ $d21 = $p2x2;
 $stmt->execute();
 $stmt2->execute(); 
 $stmt3->execute();
-}
+}*/
 
 ?>

@@ -29,53 +29,55 @@
             </div>
          </div>   
 
-        <?php
-if (isset($_POST['submit'])) {
- $status = addstudent($_POST['lname'],$_POST['fname'], $_POST['mname'],$_POST['exname'],$_POST['zipCode'],$_POST['hNoStrt'],$_POST['brgy'],$_POST['city'], $_POST['bdate'],$_POST['bplace'],$_POST['age'],$_POST['sex'],$_POST['cStatus'],$_POST['religion'],$_POST['cNum'],$_POST['email'],$_POST['schedDate'],$_POST['schedTime'],$_POST['schedslot'],$_POST['diploma'],$_POST['grade'],$_POST['gdMoral'],$_POST['id2x2']);
-}
-
-
- ?>
-
          <div class="form-fill-box">
 
             <!-- Demographic 1 -->
+<<<<<<< Updated upstream
             <div class="demographic-box ">
                <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
+=======
+            <div class="demographic-box">
+               
+>>>>>>> Stashed changes
                   <h1> Demographic Profile </h1>
                <div class="input-forms">  
                   <div class="input-name">
                      <div class="text-input">
                         <label for="lname"> Lastname <span style="font-size: 15px;color:red;" id="error1"></span></label>
-                        <input type="text" id="lname" name="lname" onblur="checkTextFieldln(this);" required>
+                        <input type="text" id="lname" name="lname" >
                      </div>
                      <div class="text-input">
                         <label for="fname"> Firstname <span style="font-size: 15px;color:red;" id="error2"></label>
-                        <input type="text" id="fname" name="fname" onblur="checkTextFieldfn(this);" required>
+                        <input type="text" id="fname" name="fname" >
                      </div>
                      <div class="text-input">
                         <label for="mname"> Middlename <span style="font-size: 15px;color:red;" id="error3"></label>
-                        <input type="text" id="mname" name="mname" onblur="checkTextFieldmn(this);" required>
+                        <input type="text" id="mname" name="mname" >
                      </div>
                      <div class="text-input">
+<<<<<<< Updated upstream
                         <label for="ext"> Extension <span style="color:blue;font-size:.8em"> *leave attended if not applicable </span> </label>
                         <input type="text" id="ext" name="exname">
+=======
+                        <label for="ext"> Extension <span style="color:red;font-size:.8em"> *leave attended if not applicable </span> </label>
+                        <input type="text" id="ext" name="exname" >
+>>>>>>> Stashed changes
                      </div>
                   </div>
 
                   <div class="input-other">
                      <div class="text-input">
                         <label for="bdate"> Birth date <span style="font-size: 15px;color:red;" id="error5"></label>
-                        <input type="date" id="bdate" name="bdate" onblur="checkTextFieldbd(this);" required>
+                        <input type="date" id="bdate" name="bdate" >
                         
                      </div>
                      <div class="text-input">
                         <label for="PoB"> Place of Birth <span style="font-size: 15px;color:red;" id="error6"></label>
-                        <input type="text" id="PoB" name="bplace" onblur="checkTextFieldpb(this);" required>
+                        <input type="text" id="PoB" name="bplace" >
                      </div>
                      <div class="text-input">
                         <label for="age"> Age <span style="font-size: 15px;color:red;" id="error7"></label>
-                        <input type="number" id="age" name="age" maxlength="2" minlength="1" min="1" max="40" onblur="checkTextFieldage(this);" required>
+                        <input type="number" id="age" name="age" maxlength="2" minlength="1" min="1" max="40" d>
                      </div>
                      <div class="text-input">
                         <label for="sex"> Sex <span style="font-size: 15px;color:red;" id="error8"></label>
@@ -88,9 +90,14 @@ if (isset($_POST['submit'])) {
                   </div>
                </div>
                
+               
                <div class="buttons">
                   <a href="../index.php" id="cancel"> Cancel </a>
+<<<<<<< Updated upstream
                   <button type="submit" id="next1" > Next </button>
+=======
+                  <button id="next1" type=""> Next </button>
+>>>>>>> Stashed changes
                </div>
             </div>
             
@@ -102,6 +109,7 @@ if (isset($_POST['submit'])) {
                   <div class="input-name">
                      <div class="text-input">
                         <label for="zipCode"> Zip Code </label>
+<<<<<<< Updated upstream
                         <input type="text" id="zipCode" name="zipCode" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
@@ -115,6 +123,21 @@ if (isset($_POST['submit'])) {
                      <div class="text-input">
                         <label for="city"> City </label>
                         <input type="text" id="city" name="city" onblur="checkTextFieldpb(this);" required>
+=======
+                        <input type="text" id="zipCode" name="zipCode" d>
+                     </div>
+                     <div class="text-input">
+                        <label for="hNoStrt"> House No. and Street </label>
+                        <input type="text" id="hNoStrt" name="hNoStrt" d>
+                     </div>
+                     <div class="text-input">
+                        <label for="brgy"> Barangay</label>
+                        <input type="text" id="brgy" name="brgy" d>
+                     </div>
+                     <div class="text-input">
+                        <label for="city"> City </label>
+                        <input type="text" id="city" name="city" d>
+>>>>>>> Stashed changes
                      </div>
                   </div>
 
@@ -132,11 +155,19 @@ if (isset($_POST['submit'])) {
                      </div>
                      <div class="text-input">
                         <label for="nationality"> Nationality </label>
+<<<<<<< Updated upstream
                         <input type="text" id="nationality" name="nationality" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
                         <label for="religion"> Religion </label>
                         <input type="text" id="religion" name="religion" maxlength="2" minlength="1" min="1" max="40" onblur="checkTextFieldpb(this);" required>
+=======
+                        <input type="text" id="nationality" name="nationality" >
+                     </div>
+                     <div class="text-input">
+                        <label for="religion"> Religion </label>
+                        <input type="text" id="religion" name="religion" maxlength="2" minlength="1" min="1" max="40" >
+>>>>>>> Stashed changes
                      </div>
                   </div>
                </div>
@@ -238,7 +269,7 @@ if (isset($_POST['submit'])) {
                <div class="buttons">
                   <button id="back3" type="button"> Back </button>
                   <input type="submit" value="Submit" name="submit" id="submit">
-                  </form>
+               
                </div>
             </div>
       
@@ -250,8 +281,9 @@ if (isset($_POST['submit'])) {
 
    <footer>
         <p> &copy; 2020 Quezon City University </p>
-   </footer>
+   </footer>   
+
+   <script src="../script/nextbtn.js"></script>
 </body>
 
-<script src="../script/nextFill.js"></script>
 </html>

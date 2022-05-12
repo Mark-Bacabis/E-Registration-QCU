@@ -1,7 +1,6 @@
+
 // Progress bar
 var progressNumber = document.getElementById("progress").querySelectorAll('.number');
-
-
 
 // Buttons
 var nxtButton1 = document.getElementById('next1');
@@ -18,29 +17,37 @@ var demographContainer2 = document.querySelector('.demographic-box2');
 var contactSched = document.querySelector('.contact-sched');
 var documentContainer = document.querySelector('.documents');
 
+<<<<<<< Updated upstream
 nxtButton1.addEventListener('onclick', function() {
    if(document.getElementById("lname").value.trim() != "" || document.getElementById("fname").value.trim() != "" || document.getElementById("mname").value.trim() != ""|| document.getElementById("bdate").value.trim() != ""|| document.getElementById("PoB").value.trim() != ""|| document.getElementById("age").value.trim() != ""|| document.getElementById("sex").value.trim() != ""){
+=======
+
+nxtButton1.addEventListener('click', function() {
+   /*if(document.getElementById("lname").value.trim() != "" || document.getElementById("fname").value.trim() != "" || document.getElementById("mname").value.trim() != ""|| document.getElementById("bdate").value.trim() != ""|| document.getElementById("PoB").value.trim() != ""|| document.getElementById("age").value.trim() != ""){ */
+  
+>>>>>>> Stashed changes
    progressNumber[1].classList.add('current');
    demographContainer1.classList.add('toLeft');
    demographContainer2.classList.remove('toLeft');
-}});
+});
   
 
 nxtButton2.addEventListener('click', function() {
-   if(document.getElementById("zipCode").value.trim() != "" || document.getElementById("hNoStrt").value.trim() != "" || document.getElementById("brgy").value.trim() != "" || document.getElementById("city").value.trim() != "" ||  document.getElementById("nationality").value.trim() != "" || document.getElementById("religion").value.trim() != ""){
+  /* if(document.getElementById("zipCode").value.trim() != "" || document.getElementById("hNoStrt").value.trim() != "" || document.getElementById("brgy").value.trim() != "" || document.getElementById("city").value.trim() != "" ||  document.getElementById("nationality").value.trim() != "" || document.getElementById("religion").value.trim() != ""){*/
+
    progressNumber[2].classList.add('current');
    demographContainer2.classList.add('toLeft');
    contactSched.classList.remove('toLeft');
-}});
+});
 
 
 
 nxtButton3.addEventListener('click', function(){
-   if(document.getElementById("email").value.trim() != "" || document.getElementById("cNum").value.trim() != "" || document.getElementById("schedDate").value.trim() != "" || document.getElementById("schedTime").value.trim() != ""){
+   /*if(document.getElementById("email").value.trim() != "" || document.getElementById("cNum").value.trim() != "" || document.getElementById("schedDate").value.trim() != "" || document.getElementById("schedTime").value.trim() != ""){*/
    progressNumber[3].classList.add('current');
    contactSched.classList.add('toLeft');
    documentContainer.classList.remove('toLeft');
-}});
+});
 
 
 backBtn1.addEventListener('click', function(){
@@ -62,6 +69,9 @@ backBtn3.addEventListener('click', function(){
 });
 
 
+
+
+/*
 function checkTextFieldln(field) {
   document.getElementById("error1").innerText =
     (field.value === "") ? "*Lastname is required" : "";
@@ -98,4 +108,4 @@ function checkTextFieldsex(field) {
 }
 
 
-   
+   */

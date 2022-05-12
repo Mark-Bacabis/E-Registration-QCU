@@ -30,6 +30,7 @@
    //echo $sched;
    
    ApproveApplicants($regNum, $appNum, $fullname, $sex, $bdate, $sched, $email, $dateTime);
+   sendEmail($appNum);
 
    include "../php/join.php";
 

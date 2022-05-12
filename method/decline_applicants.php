@@ -29,6 +29,7 @@ $email = $examinee['email'];
 $sched = $examinee['Date']." ".$examinee['StartTime']."-".$examinee['EndTime'];
 
 declineApplicants($regNum);
+sendEmail($appNum);
 
 include "../php/join.php";
 
