@@ -1,42 +1,39 @@
 <?php
-   include "../php/db_connection.php";
+
+include "../php/db_connection.php";
    
-   include "../php/date.php";
-   include "../php/count.php";
-   include "../method/functions.php";
+include "../php/date.php";
+include "../php/count.php";
+include "../method/functions.php";
 
-  
 
-   $regNum = $_POST['regNum'];
 
-   // SELECT ALL APPLICANTS
-   $selApplicants = "SELECT * FROM `stud_application` a 
-   JOIN `stud_sched` b
-   ON a.reg_num = b.reg_num
-   JOIN `schedule` c
-   ON b.schedID = c.schedID
-   WHERE b.reg_num = '$regNum'";
+$regNum = $_POST['regNum'];
 
-   $applicantsQuery = mysqli_query($con, $selApplicants);
-   $examinee = mysqli_fetch_assoc($applicantsQuery);
+// SELECT ALL APPLICANTS
+$selApplicants = "SELECT * FROM `stud_application` a 
+JOIN `stud_sched` b
+ON a.reg_num = b.reg_num
+JOIN `schedule` c
+ON b.schedID = c.schedID
+WHERE b.reg_num = '$regNum'";
 
-   $appNum = "APP20220".($cntApproved['total'] + 1);
-   $fullname = $examinee['First_Name']." ".$examinee['Middle_Name']." ".$examinee['Last_Name']." ".$examinee['Extension_Name'];
-   $sex = $examinee['Sex'];
-   $bdate = $examinee['Birthdate'];
-   $email = $examinee['email'];
-   $sched = $examinee['Date']." ".$examinee['StartTime']."-".$examinee['EndTime'];
+$applicantsQuery = mysqli_query($con, $selApplicants);
+$examinee = mysqli_fetch_assoc($applicantsQuery);
 
-   //echo $sched;
-   
-   ApproveApplicants($regNum, $appNum, $fullname, $sex, $bdate, $sched, $email, $dateTime);
+$appNum = "APP20220".($cntApproved['total'] + 1);
+$fullname = $examinee['First_Name']." ".$examinee['Middle_Name']." ".$examinee['Last_Name']." ".$examinee['Extension_Name'];
+$sex = $examinee['Sex'];
+$bdate = $examinee['Birthdate'];
+$email = $examinee['email'];
+$sched = $examinee['Date']." ".$examinee['StartTime']."-".$examinee['EndTime'];
 
-   include "../php/join.php";
+declineApplicants($regNum);
+
+include "../php/join.php";
 
 ?>
-
-
-         <table class="tbl-applicant" border="0">
+ <table class="tbl-applicant" border="0">
                <tr>
                   
                   <th> Reg No. </th>

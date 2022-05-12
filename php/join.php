@@ -16,8 +16,7 @@
    JOIN `stud_status` b
    ON a.reg_num = b.reg_num
    JOIN `stud_documents` c
-   ON a.reg_num = c.reg_num
-   WHERE b.status = 'Approved'";
+   ON a.reg_num = c.reg_num";
 
    $joinAppQueryApproved = mysqli_query($con, $joinAppApproved);
 

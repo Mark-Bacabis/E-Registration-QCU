@@ -3,6 +3,7 @@
    include "../php/select.php";
    include "../php/join.php";
    include "../php/count.php";
+   include "../method/functions.php";
 
    //echo $cntApproved['total'];
 
@@ -47,7 +48,7 @@
          </nav>
 
          <footer>
-            <p> Quezon City University </p>
+            <p> Quezon City University <?=generatePassword()?> </p>
          </footer>
       </div>
 
@@ -186,6 +187,9 @@
                </tr>
             <?php }
                }
+               else{ ?>
+                 <td colspan="8"> No applicants yet.. </td> 
+               <?php }
             ?>
                
             </table>
@@ -244,6 +248,9 @@
                </tr>
                   <?php   }
                   }
+                    else{ ?>
+                  <td colspan="8"> No applicants yet.. </td> 
+               <?php }
                ?>
              
             </table>
@@ -251,6 +258,13 @@
       </div>
    </section>
 
+
+
+
+
+
+
+   <!-- IMAGE VIEWER -->
    <div class="gwa-viewer" id="gwa-viewer">
       <div class="close">
          <p> + </p>
@@ -273,8 +287,8 @@
     labels: labels,
     datasets: [{
       label: "Applicants' tracker each month",
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: '#2f51af',
+      borderColor: '#2f51af',
       data: [10, 28, 30],
     }]
   };
@@ -290,6 +304,49 @@
       document.getElementById('myChart'),
       config
    );
+
+   const ctx = document.getElementById('doughnut-chart');
+
+    // DOUGHNUT CHART
+    const doughnutChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+         labels: [  
+            'Pending',
+            'Approved',
+            'Declined'
+         ],
+         datasets: [{
+            data: [
+               <?=$cntPending['total']?>,
+               <?=$cntApproved['total']?>,
+               <?=$cntDeclined['total']?>
+            
+            ],
+            backgroundColor: [
+               '#952faf',
+               '#2faf73',
+               '#af2f2f',
+            ]
+         }]
+      },
+      options: {
+         responsive: false,
+         
+         plugins:  {
+            legend: {
+               display: true,
+               position: 'left'
+            },
+            title: {
+               display: true,
+               text: 'Registered Students per course'
+            }
+         }
+      },
+      
+   });
+
 </script>
 
 

@@ -295,12 +295,13 @@ section{
 .content-box .dashboard .dashboard-content .graph-log .act-log{
    width: 38%;
    height: 100%;
-   background-color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: rgb(255, 255, 255);
    border-radius: 8px;
    box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.13);
 }
-
-
 
 
 
@@ -537,3 +538,4 @@ section{
    transform: rotate(45deg);
    cursor: default;
 }
+
