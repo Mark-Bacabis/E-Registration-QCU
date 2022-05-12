@@ -22,10 +22,6 @@ $(document).ready(function(){
          regNum:reg_num
       });
       
-      $('.summary').load('../method/overview.php',{
-         
-      });
-      
       
 
    });
