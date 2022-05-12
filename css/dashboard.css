@@ -34,7 +34,6 @@ section{
 .side-navbar .admin-profile .profile-pic{
    width: 100px;
    height: 100px;
-   background-color: #fff;
    border-radius: 50%;
    margin-bottom: 10px;
    overflow: hidden;
@@ -47,6 +46,12 @@ section{
 .side-navbar .admin-profile .profile-pic img{
    height: 100%;
    width: 100%;
+}
+.side-navbar .admin-profile .admin-info{
+   letter-spacing: 1px;
+}
+.side-navbar .admin-profile .admin-info p{
+   color: #ffffff83;
 }
 
 .side-navbar nav{
@@ -279,15 +284,16 @@ section{
 }
 
 .content-box .dashboard .dashboard-content .graph-log .chart{
-   width: 67%;
+   width: 60%;
    height: 100%;
+   padding: 10px;
    background-color: #fff;
    border-radius: 8px;
    box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.13);
 }
 
 .content-box .dashboard .dashboard-content .graph-log .act-log{
-   width: 30%;
+   width: 38%;
    height: 100%;
    background-color: #fff;
    border-radius: 8px;

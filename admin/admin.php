@@ -22,16 +22,20 @@
 
  <!-- AJAX FILES -->
 <script src="../ajax/ActionApplicant.js"></script>
+
+<!-- CHART --> 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <body>
    <section>
       <div class="side-navbar">
          <div class="admin-profile">
             <div class="profile-pic">
-               <img src="" alt="">
+               <img src="../img/icons/profile.png" alt="">
             </div>
             <div class="admin-info">
-               <h1> Admin Name </h1>
-               <p> admin ID </p>
+               <h1> Mark Bacabis </h1>
+               <p> 15022101 </p>
             </div>
          </div>
 
@@ -117,10 +121,15 @@
 
                <div class="graph-log">
                   <div class="chart">
-                    
+                     <div>
+                        <canvas id="myChart"></canvas>
+                     </div>
+
                   </div>
                   <div class="act-log">
-
+                     <div>
+                        <canvas id="doughnut-chart"></canvas>
+                     </div>
                   </div>
                </div>
 
@@ -252,9 +261,38 @@
 
 </body>
 
-<script src="">
-   let myChart = document.getElementById('myChart').getContext('2d');
+<script>
+   // SETUP
+   const labels = [
+    'June',
+    'July',
+    'August'
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: "Applicants' tracker each month",
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [10, 28, 30],
+    }]
+  };
+
+  // CONFIG
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+   var myChart = new Chart( 
+      document.getElementById('myChart'),
+      config
+   );
 </script>
+
+
 <script src="../script/sidenav.js"></script>
 <script src="../script/admin-img.js"></script>
 </html>
