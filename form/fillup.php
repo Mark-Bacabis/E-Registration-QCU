@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
          <div class="form-fill-box">
 
             <!-- Demographic 1 -->
-            <div class="demographic-box">
+            <div class="demographic-box ">
                <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
                   <h1> Demographic Profile </h1>
                <div class="input-forms">  
@@ -58,8 +58,8 @@ if (isset($_POST['submit'])) {
                         <input type="text" id="mname" name="mname" onblur="checkTextFieldmn(this);" required>
                      </div>
                      <div class="text-input">
-                        <label for="ext"> Extension <span style="color:red;font-size:.8em"> *leave attended if not applicable </span> </label>
-                        <input type="text" id="ext" name="exname" required>
+                        <label for="ext"> Extension <span style="color:blue;font-size:.8em"> *leave attended if not applicable </span> </label>
+                        <input type="text" id="ext" name="exname">
                      </div>
                   </div>
 
@@ -79,7 +79,8 @@ if (isset($_POST['submit'])) {
                      </div>
                      <div class="text-input">
                         <label for="sex"> Sex <span style="font-size: 15px;color:red;" id="error8"></label>
-                        <select name="sex" id="sex">
+                        <select name="sex" id="sex" onblur="checkTextFieldpb(this);" required>
+                           <option value=""> Choose </option>
                            <option value="M"> Male </option>
                            <option value="F"> Female </option>
                         </select>
@@ -89,7 +90,7 @@ if (isset($_POST['submit'])) {
                
                <div class="buttons">
                   <a href="../index.php" id="cancel"> Cancel </a>
-                  <button id="next1" type="submit"> Next </button>
+                  <button type="submit" id="next1" > Next </button>
                </div>
             </div>
             
@@ -101,26 +102,27 @@ if (isset($_POST['submit'])) {
                   <div class="input-name">
                      <div class="text-input">
                         <label for="zipCode"> Zip Code </label>
-                        <input type="text" id="zipCode" name="zipCode" required>
+                        <input type="text" id="zipCode" name="zipCode" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
                         <label for="hNoStrt"> House No. and Street </label>
-                        <input type="text" id="hNoStrt" name="hNoStrt" required>
+                        <input type="text" id="hNoStrt" name="hNoStrt" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
                         <label for="brgy"> Barangay</label>
-                        <input type="text" id="brgy" name="brgy" required>
+                        <input type="text" id="brgy" name="brgy" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
                         <label for="city"> City </label>
-                        <input type="text" id="city" name="city" required>
+                        <input type="text" id="city" name="city" onblur="checkTextFieldpb(this);" required>
                      </div>
                   </div>
 
                   <div class="input-other">
                      <div class="text-input">
                         <label for="bdate"> Civil Status </label>
-                        <select name="cStatus" id="cStatus">
+                        <select name="cStatus" id="cStatus" onblur="checkTextFieldpb(this);" required>
+                           <option value=""> Choose </option>
                            <option value="Single"> Single </option>
                            <option value="Married"> Married </option>
                            <option value="Widowed"> Widowed </option>
@@ -130,18 +132,18 @@ if (isset($_POST['submit'])) {
                      </div>
                      <div class="text-input">
                         <label for="nationality"> Nationality </label>
-                        <input type="text" id="nationality" name="nationality" required>
+                        <input type="text" id="nationality" name="nationality" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
                         <label for="religion"> Religion </label>
-                        <input type="text" id="religion" name="religion" maxlength="2" minlength="1" min="1" max="40" required>
+                        <input type="text" id="religion" name="religion" maxlength="2" minlength="1" min="1" max="40" onblur="checkTextFieldpb(this);" required>
                      </div>
                   </div>
                </div>
                
                <div class="buttons">
                   <button id="back1" type="button"> Back </button>
-                  <button id="next2" type="button"> Next </button>
+                  <button id="next2" type="submit"> Next </button>
                </div>
             </div> 
            
@@ -153,11 +155,11 @@ if (isset($_POST['submit'])) {
                      <h1> Contact </h1>
                      <div class="text-input">
                         <label for="email"> Email <span style="color:red;font-size:.8em">  *must be a gmail account </span> </label>
-                        <input type="text" id="email" name="email">
+                        <input type="text" id="email" name="email" onblur="checkTextFieldpb(this);" required>
                      </div>
                      <div class="text-input">
                         <label for="cNum"> Contact number </label>
-                        <input type="text" id="cNum" name="cNum">
+                        <input type="text" id="cNum" name="cNum" onblur="checkTextFieldpb(this);" required>
                      </div>
                
 
@@ -208,7 +210,7 @@ if (isset($_POST['submit'])) {
 
                <div class="buttons">
                   <button id="back2" type="button"> Back </button>
-                  <button id="next3" type="button"> Next </button>
+                  <button id="next3" type="submit"> Next </button>
                </div>
             </div>
 
