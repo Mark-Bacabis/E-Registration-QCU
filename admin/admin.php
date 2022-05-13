@@ -216,7 +216,7 @@
             <table class="tbl-approved-applicant" border="0">
                <tr>
                   
-                  <th> Registration # </th>
+                  <th> Reg No. </th>
                   <th> 2x2 </th>
                   <th> Fullname </th>
                   <th> Email </th>
