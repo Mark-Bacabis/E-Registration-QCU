@@ -225,4 +225,5 @@
 </body>
 
 <script src="./script/slide.js"></script>
+
 </html>

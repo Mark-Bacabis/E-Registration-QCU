@@ -43,12 +43,12 @@
          <nav id="navLink">
             <div class="nav-link current"> Dashboard </div>
             <div  class="nav-link"> Applicants </div>
-            <div  class="nav-link"> Approved Applicants </div>
-            <div  class="nav-link"> Slot Available </div>
+            <div  class="nav-link"> Applicants Status </div>
+            <div  class="nav-link"> Schedule </div>
          </nav>
 
          <footer>
-            <p> Quezon City University <?=generatePassword()?> </p>
+            <p> Quezon City University </p>
          </footer>
       </div>
 
@@ -70,7 +70,7 @@
             <div class="open-close-reg">
                <h3> Registration </h3>
                <div class="on-off">
-                  <input type="checkbox" name="checkbox" id="checkbox">
+                  <input type="checkbox" name="checkbox" id="checkbox" checked>
                   <label for="checkbox" class="label">
                      <div class="ball"></div>
                   </label>
@@ -174,11 +174,11 @@
                   while($rows = mysqli_fetch_assoc( $joinAppQuery)){ ?>
                <tr>
                   <td> <div id="reg_num"> <?=$rows['reg_num']?> </div></td>
-                  <td> <img src="../img/upload_documents/<?=$rows['id_front']?>" alt="" class="id-pic"></td>
+                  <td> <img src="../img/upload_documents/2x2/<?=$rows['id_pic']?>" alt="" class="id-pic"></td>
                   <td> <div id="fullname"> <?=$rows['First_Name']?> <?=$rows['Middle_Name']?> <?=$rows['Last_Name']?> <?=$rows['Extension_Name']?> </div> </td>
                   <td> <div id="email"> <?=$rows['email']?> </div> </td>
-                  <td> <img src="../img/upload_documents/<?=$rows['gradeslip']?>" alt="" class="gwa-img"></td>
-                  <td> <span style="font-size: .8em;"> <?=$rows['Date']?> <br> <?=$rows['StartTime']?> : <?=$rows['EndTime']?> </span></td>
+                  <td> <img src="../img/upload_documents/grade/<?=$rows['grade']?>" alt="" class="gwa-img"></td>
+                  <td> <span style="font-size: .8em;"> <?=$rows['Date']?> <br> <?=$rows['StartTime']?> </span></td>
                   <td> <?=$rows['status']?></td>
                   <td> 
                      <button data-role="approve" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/checked.png" alt=""></button> 
@@ -216,33 +216,40 @@
             <table class="tbl-approved-applicant" border="0">
                <tr>
                   
-                  <th> Application # </th>
+                  <th> Registration # </th>
+                  <th> 2x2 </th>
                   <th> Fullname </th>
                   <th> Email </th>
-                  <th> GWA </th>
-                  <th> Schedule </th>
                   <th> Status </th>
                </tr>
                <?php 
-                  if(mysqli_num_rows($joinAppQueryApproved) > 0){
-                     while($rows = mysqli_fetch_assoc($joinAppQueryApproved)){ ?>
+                  if(mysqli_num_rows($selAppQuery) > 0){
+                     while($rows = mysqli_fetch_assoc($selAppQuery)){ ?>
                           <tr>
-                  <td> <?=$rows['app_num']?> </td>
-                 
-                  <td> <?=$rows['fullname']?> </td>
-                  <td> <?=$rows['email']?> </td>
+                  <td> <?=$rows['reg_num']?> </td>
                   <td> 
                      <div class="img">
-                        <img src="../img/upload_documents/<?=$rows['id_front']?>" alt="">
-                     </div>
+                        <img src="../img/upload_documents/2x2/<?=$rows['id_pic']?>" alt=""> 
+                     </div>   
                   </td>
-                  <td> 
-                     <span style="font-size: .8em;"> <?=$rows['schedule']?> </span>
-                  </td>
+                 
+                  <td> <?=$rows['First_Name']?> <?=$rows['Middle_Name']?> <?=$rows['Last_Name']?> <?=$rows['Extension_Name']?> </td>
+                  <td> <?=$rows['email']?> </td>
+                  
                   <td> 
                      <div class="status">
-                        <img src="../img/Icons/checked.png" alt=""> 
-                        <p> <?=$rows['status']?> </p>
+                        <?php
+                           if($rows['status'] == 'Approved') { ?>
+                              <img src="../img/Icons/checked.png" alt=""> 
+                              <p> <?=$rows['status']?> </p>
+                         <?php } else{
+                            ?>
+                            <img src="../img/Icons/delete.png" alt=""> 
+                            <p> <?=$rows['status']?> </p>
+                       <?php 
+                         }
+                        ?>
+                        
                      </div>
                   </td>
                </tr>
@@ -278,9 +285,7 @@
 <script>
    // SETUP
    const labels = [
-    'June',
-    'July',
-    'August'
+      'May','June','July','August'
   ];
 
   const data = {
@@ -289,7 +294,15 @@
       label: "Applicants' tracker each month",
       backgroundColor: '#2f51af',
       borderColor: '#2f51af',
-      data: [10, 28, 30],
+      data: [
+         <?php
+         if(mysqli_num_rows($cntAppEachMos) > 0){
+            while($rows = mysqli_fetch_assoc($cntAppEachMos)) { ?>
+                  <?=$rows['total']?>, 
+           <?php }
+         }
+      ?>
+      ],
     }]
   };
 

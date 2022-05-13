@@ -26,15 +26,16 @@ $fullname = $examinee['First_Name']." ".$examinee['Middle_Name']." ".$examinee['
 $sex = $examinee['Sex'];
 $bdate = $examinee['Birthdate'];
 $email = $examinee['email'];
-$sched = $examinee['Date']." ".$examinee['StartTime']."-".$examinee['EndTime'];
+$sched = $examinee['Date']." ".$examinee['StartTime'];
 
 declineApplicants($regNum);
-sendEmail($appNum);
+sendEmailDec($regNum);
 
 include "../php/join.php";
 
 ?>
- <table class="tbl-applicant" border="0">
+ 
+<table class="tbl-applicant" border="0">
                <tr>
                   
                   <th> Reg No. </th>
@@ -51,11 +52,11 @@ include "../php/join.php";
                   while($rows = mysqli_fetch_assoc( $joinAppQuery)){ ?>
                <tr>
                   <td> <div id="reg_num"> <?=$rows['reg_num']?> </div></td>
-                  <td> <img src="../img/upload_documents/<?=$rows['id_front']?>" alt="" class="id-pic"></td>
+                  <td> <img src="../img/upload_documents/2x2/<?=$rows['id_pic']?>" alt="" class="id-pic"></td>
                   <td> <div id="fullname"> <?=$rows['First_Name']?> <?=$rows['Middle_Name']?> <?=$rows['Last_Name']?> <?=$rows['Extension_Name']?> </div> </td>
                   <td> <div id="email"> <?=$rows['email']?> </div> </td>
-                  <td> <img src="../img/upload_documents/<?=$rows['gradeslip']?>" alt="" class="gwa-img"></td>
-                  <td> <span style="font-size: .8em;"> <?=$rows['Date']?> <br> <?=$rows['StartTime']?> : <?=$rows['EndTime']?> </span></td>
+                  <td> <img src="../img/upload_documents/grade/<?=$rows['grade']?>" alt="" class="gwa-img"></td>
+                  <td> <span style="font-size: .8em;"> <?=$rows['Date']?> <br> <?=$rows['StartTime']?> </span></td>
                   <td> <?=$rows['status']?></td>
                   <td> 
                      <button data-role="approve" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/checked.png" alt=""></button> 
@@ -64,6 +65,9 @@ include "../php/join.php";
                </tr>
             <?php }
                }
+               else{ ?>
+                 <td colspan="8"> No applicants yet.. </td> 
+               <?php }
             ?>
                
             </table>

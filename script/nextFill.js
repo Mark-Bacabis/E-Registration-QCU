@@ -1,3 +1,18 @@
+// Input field
+var inputTexts = document.querySelectorAll('input[type="text"]');
+var inputNum = document.querySelectorAll('input[type="number"]');
+var inputDate = document.querySelectorAll('input[type="date"]');
+var select = document.querySelectorAll('select');
+console.log(inputTexts);
+console.log(inputNum);
+console.log(inputDate);
+console.log(select);
+
+// text-input labels
+var labels = document.querySelectorAll('.text-input label .errMessage');
+
+console.log(labels);
+
 
 // Progress bar
 var progressNumber = document.getElementById("progress").querySelectorAll('.number');
@@ -18,32 +33,67 @@ var contactSched = document.querySelector('.contact-sched');
 var documentContainer = document.querySelector('.documents');
 
 nxtButton1.addEventListener('click', function() {
-   /*if(document.getElementById("lname").value.trim() != "" || document.getElementById("fname").value.trim() != "" || document.getElementById("mname").value.trim() != ""|| document.getElementById("bdate").value.trim() != ""|| document.getElementById("PoB").value.trim() != ""|| document.getElementById("age").value.trim() != ""){ */
-  
-   progressNumber[1].classList.add('current');
-   demographContainer1.classList.add('toLeft');
-   demographContainer2.classList.remove('toLeft');
+  if(inputTexts[0].value == '' || inputTexts[1].value == '' || inputTexts[2].value == '' || inputTexts[4].value == '' || inputNum[0].value == '' || inputNum[0].value == '' || select[0].value == ''){ 
+    labels[0].innerHTML = '*This field is required';
+    labels[1].innerHTML = '*This field is required';
+    labels[2].innerHTML = '*This field is required';
+    labels[4].innerHTML = '*This field is required';
+    labels[5].innerHTML = '*This field is required';
+    labels[6].innerHTML = '*This field is required';
+    labels[7].innerHTML = '*This field is required';
+
+  }
+  else{
+    progressNumber[1].classList.add('current');
+    demographContainer1.classList.add('toLeft');
+    demographContainer2.classList.remove('toLeft');
+  }
 });
+
+
+select[0].addEventListener('change', ()=>{
+  labels[7].innerHTML = '';
+})
   
 
 nxtButton2.addEventListener('click', function() {
-  /* if(document.getElementById("zipCode").value.trim() != "" || document.getElementById("hNoStrt").value.trim() != "" || document.getElementById("brgy").value.trim() != "" || document.getElementById("city").value.trim() != "" ||  document.getElementById("nationality").value.trim() != "" || document.getElementById("religion").value.trim() != ""){*/
+  
+  if(inputTexts[5].value == '' || inputTexts[6].value == '' || inputTexts[7].value == '' || inputTexts[8].value == '' || select[1].value == '' || inputTexts[9].value == '' || inputTexts[10].value == ''){ 
+    labels[8].innerHTML = '*This field is required';
+    labels[9].innerHTML = '*This field is required';
+    labels[10].innerHTML = '*This field is required';
+    labels[11].innerHTML = '*This field is required';
+    labels[12].innerHTML = '*This field is required';
+    labels[13].innerHTML = '*This field is required';
+    labels[14].innerHTML = '*This field is required';
 
+  }
+  else{
    progressNumber[2].classList.add('current');
    demographContainer2.classList.add('toLeft');
    contactSched.classList.remove('toLeft');
+  }
+  
 });
 
 
 
 nxtButton3.addEventListener('click', function(){
-   /*if(document.getElementById("email").value.trim() != "" || document.getElementById("cNum").value.trim() != "" || document.getElementById("schedDate").value.trim() != "" || document.getElementById("schedTime").value.trim() != ""){*/
-   progressNumber[3].classList.add('current');
-   contactSched.classList.add('toLeft');
-   documentContainer.classList.remove('toLeft');
+  if(inputTexts[11].value == '' || inputTexts[12].value == ''){ 
+    labels[15].innerHTML = '*This field is required';
+    labels[16].innerHTML = '*This field is required';
+    
+
+  }
+  else{
+    progressNumber[3].classList.add('current');
+    contactSched.classList.add('toLeft');
+    documentContainer.classList.remove('toLeft');
+  }
+ 
 });
 
-
+// BACK BUTTONS
 backBtn1.addEventListener('click', function(){
    progressNumber[1].classList.remove('current');
    demographContainer1.classList.remove('toLeft');
@@ -64,42 +114,3 @@ backBtn3.addEventListener('click', function(){
 
 
 
-
-/*
-function checkTextFieldln(field) {
-  document.getElementById("error1").innerText =
-    (field.value === "") ? "*Lastname is required" : "";
-}
-
-function checkTextFieldfn(field) {
-  document.getElementById("error2").innerText =
-    (field.value === "") ? "*Firstname is required" : "";
-}
-
-function checkTextFieldmn(field) {
-  document.getElementById("error3").innerText =
-    (field.value === "") ? "*Middlename is required" : "";
-}
-
-
-function checkTextFieldbd(field) {
-  document.getElementById("error5").innerText =
-    (field.value === "") ? "*Birthday is required" : "";
-}
-
-function checkTextFieldpb(field) {
-  document.getElementById("error6").innerText =
-    (field.value === "") ? "*Place of birth is required" : "";
-}
-
-function checkTextFieldage(field) {
-  document.getElementById("error7").innerText =
-    (field.value === "") ? "*Age is required" : "";
-}
-
-function checkTextFieldsex(field) {
-  document.getElementById("error8").innerText = (field.value === "") ? "*Sex is required" : "";
-}
-
-
-   */

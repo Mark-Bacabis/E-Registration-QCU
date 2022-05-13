@@ -206,6 +206,11 @@ section .form-box .form-fill-box .text-input label{
    margin-bottom: 5px;
 }
 
+section .form-box .form-fill-box .text-input label span{
+   color: red;
+   font-size: .7em;
+}
+
 section .form-box .form-fill-box .text-input input, .text-input select{
    padding: 4px 10px;
    outline-color: var(--buttonColor);
@@ -319,6 +324,7 @@ section .form-box .form-fill-box .demographic-box2 .input-forms{
 .toLeft{
    left: -100%;
 }
+
 
 
 
