@@ -1,0 +1,126 @@
+*{
+   padding: 0;
+   margin: 0;
+   font-family: 'Poppins', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+   box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+   width: 6px;
+   margin: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+   background-color: rgba(0, 0, 0, 0.425);
+   border-radius: 12px;
+}
+::-webkit-scrollbar-track{
+   margin: 10px;
+}
+
+main{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   background-color: #e8e9f8;
+}
+
+
+main .form-login{
+   background-color: #fff;
+   height: 400px;
+   width: 380px;
+   box-shadow: 0 7px 10px 0 rgba(0,0,0,.2);
+   border-radius: 10px;
+   padding: 10px; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+}
+
+main .form-login .icon-holder{
+   position: absolute;
+   top: -8%;
+   border-radius: 50%;
+   width: 80px;
+   height: 80px;
+   padding: 10px;
+   background-color: #fff;
+
+}
+main .form-login .icon-holder img{
+   width: 100%;
+   height: 100%;
+}
+main .form-login .qcu-title{
+   text-align: center;
+   display: flex;
+   align-items: center;
+   margin-top: 40px
+}
+main .form-login .qcu-title h2{
+   font-size: 1.1em;
+   letter-spacing: 1px;
+}
+main .form-login .qcu-title img{
+   width: 40px;
+   margin-right: 10px;
+}
+
+main .form-login form{
+   display: flex;
+   flex-direction: column;
+   width: 80%;
+   height: max-content;
+   margin-top: 40px
+}
+
+main .form-login form label{
+   font-size: 1em;
+   letter-spacing: 1px;
+   margin-bottom: 5px;
+}
+
+main .form-login form input{
+   outline: none;
+   border: none;
+   border-bottom: 2px solid black;
+   margin-bottom: 10px;
+   font-size: 1em;
+   padding: 4px 12px;
+}
+
+main .form-login form input:focus{
+   border-bottom: 2px solid rgb(25, 64, 109);
+}
+
+
+main .form-login form input[type="submit"]{
+   background-color: forestgreen;
+   color: #fff;
+   letter-spacing: 1px;
+   font-size: 1.1em;
+   border: none;
+   border-radius: 3px;
+   margin-top: 20px;
+   cursor: pointer;
+   transition: ease background .3s;
+}
+
+main .form-login form input[type="submit"]:hover{
+   background-color: rgb(28, 116, 28);
+}
+
+
+
+main .footer{
+   margin-top: 40px;
+   font-size: .9em;
+   letter-spacing: 1px;
+   opacity: .7;
+}

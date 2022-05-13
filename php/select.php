@@ -1,6 +1,7 @@
 <?php
+
    // SELECT ALL DATES
-   $selectDate = "SELECT DISTINCT `Date` FROM `schedule`";
+   $selectDate = "SELECT * FROM `schedule`";
    $dateQuery = mysqli_query($con, $selectDate);
 
    // SELECT START TIME, END TIME, AND SLOTS PER DATES
@@ -33,5 +34,21 @@
    ON a.reg_num = e.reg_num
    WHERE b.status = 'Declined' OR b.status = 'Approved' ";
    $selAppQuery = mysqli_query($con, $selAppStatus);
+
+
+   // SELECT DATE ONLY 
+   $selDateOnlyQuery = "SELECT DISTINCT Date FROM `schedule`";
+   $selDateOnly = mysqli_query($con, $selDateOnlyQuery);
+
+   // SELECT TIME ONLY 
+   $selTimeOnlyQuery = "SELECT DISTINCT StartTime FROM `schedule`";
+   $selTimeOnly = mysqli_query($con, $selTimeOnlyQuery);
+
+   // SELECT ADMIN 
+   $adminID = $_SESSION['adminID'];
+   $selAdmin = "SELECT * FROM `admin_account` WHERE id = $adminID ";
+   $selAdminQ = mysqli_query($con, $selAdmin);
+   $admin = mysqli_fetch_assoc($selAdminQ);
+
 
 ?>

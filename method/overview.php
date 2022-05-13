@@ -5,7 +5,7 @@
     include "../php/count.php";
 ?>
 
-<div class="summary-box pending"> 
+                  <div class="summary-box pending"> 
                      <div class="icon">
                         <img src="../img/icons/wfacebook.png" alt="">
                      </div>

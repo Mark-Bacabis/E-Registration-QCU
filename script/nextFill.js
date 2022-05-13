@@ -33,10 +33,9 @@ var contactSched = document.querySelector('.contact-sched');
 var documentContainer = document.querySelector('.documents');
 
 nxtButton1.addEventListener('click', function() {
-  if(inputTexts[0].value == '' || inputTexts[1].value == '' || inputTexts[2].value == '' || inputTexts[4].value == '' || inputNum[0].value == '' || inputNum[0].value == '' || select[0].value == ''){ 
+  if(inputTexts[0].value == '' || inputTexts[1].value == '' || inputTexts[4].value == '' || inputNum[0].value == '' || inputNum[0].value == '' || select[0].value == ''){ 
     labels[0].innerHTML = '*This field is required';
     labels[1].innerHTML = '*This field is required';
-    labels[2].innerHTML = '*This field is required';
     labels[4].innerHTML = '*This field is required';
     labels[5].innerHTML = '*This field is required';
     labels[6].innerHTML = '*This field is required';

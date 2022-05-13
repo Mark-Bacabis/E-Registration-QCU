@@ -188,4 +188,16 @@ function sendEmailDec($regID) {
 
    $mail ->smtpClose();
 }
+
+
+function addSchedule($schedDate, $schedTime, $schedSlot) {
+   include "../php/db_connection.php";
+   $schedQuery = "INSERT INTO `schedule`(`Date`, `StartTime`, `Slot`) VALUES ('$schedDate','$schedTime','$schedSlot')";
+
+   mysqli_query($con, $schedQuery);
+}
+
+
+
+
 ?>

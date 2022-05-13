@@ -54,7 +54,7 @@
                         <input type="text" id="fname" name="fname" >
                      </div>
                      <div class="text-input">
-                        <label for="mname"> Middlename <span class="errMessage"> </span></label>
+                        <label for="mname"> Middlename <span class="errMessage">  *leave attended if not applicable </span></label>
                         <input type="text" id="mname" name="mname" >
                      </div>
                      <div class="text-input">
@@ -174,8 +174,8 @@
                         
                         <select name="schedDate" id="schedDate">
                            <?php
-                              if(mysqli_num_rows($dateQuery) > 0){
-                                 while($rows = mysqli_fetch_assoc($dateQuery)){ ?>
+                              if(mysqli_num_rows($selDateOnly) > 0){
+                                 while($rows = mysqli_fetch_assoc($selDateOnly)){ ?>
                                  <option value="<?=$rows['Date']?>"> <?=$rows['Date']?> </option>      
                               <?php }
                               }
@@ -190,8 +190,8 @@
                         <label for="schedTime"> Time </label>
                         <select name="schedTime" id="schedTime">
                            <?php
-                             if(mysqli_num_rows($schedQuery) > 0 && ($slot['Slot'] > 0 && $slot['Slot'] <= 10)){
-                                 while($rows = mysqli_fetch_assoc($schedQuery)){?>
+                             if(mysqli_num_rows($selTimeOnly) > 0 ){
+                                 while($rows = mysqli_fetch_assoc($selTimeOnly)){?>
                                     <option> <?=$rows['StartTime']?> </option>
                                  <?php }
                               } else{ ?>
@@ -214,9 +214,7 @@
                   <button id="next3" type="button"> Next </button>
                </div>
             </div>
-
-           
-            
+    
             
 
             <!-- Attach documents -->

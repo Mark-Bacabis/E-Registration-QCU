@@ -1,4 +1,11 @@
 <?php
+   session_start();
+   $adminID = $_SESSION['adminID'];
+
+   if(empty($adminID)){
+      header('location: ./index.php');
+   }
+ 
    include "../php/db_connection.php";
    include "../php/select.php";
    include "../php/join.php";
@@ -23,6 +30,7 @@
 
  <!-- AJAX FILES -->
 <script src="../ajax/ActionApplicant.js"></script>
+<script src="../ajax/addSched.js"></script>
 
 <!-- CHART --> 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -32,11 +40,11 @@
       <div class="side-navbar">
          <div class="admin-profile">
             <div class="profile-pic">
-               <img src="../img/icons/profile.png" alt="">
+               <img src="../img/icons/<?=$admin['avatar']?>" alt="">
             </div>
             <div class="admin-info">
-               <h1> Mark Bacabis </h1>
-               <p> 15022101 </p>
+               <h1> <?=$admin['firstname']?> <?=$admin['lastname']?> </h1>
+               <p> <?=$admin['id']?> </p>
             </div>
          </div>
 
@@ -61,7 +69,7 @@
             </div>
 
             <div class="profile-icon">
-               <img src="../img/Icons/mechanical-gears-.png" alt="">
+               <a href="../php/admin_logout.php"><img src="../img/Icons/logout.png" alt=""> </a>
             </div>
          </div>
 
@@ -148,51 +156,46 @@
                   <div class="search">
                      <input type="search" name="search" id="search" placeholder="Search">
                   </div>
-                  
-
                </div>
             </div>
 
             <div class="tbl-box" id="tbl-box">
-
-            
-
-            <table class="tbl-applicant" border="0">
-               <tr>
+               <table class="tbl-applicant" border="0">
+                  <tr>
+                     
+                     <th> Reg No. </th>
+                     <th> 2x2 </th>
+                     <th> Fullname </th>
+                     <th> Email </th>
+                     <th> GWA </th>
+                     <th> Schedule </th>
+                     <th> Status </th>
+                     <th> Action </th>
+                  </tr>
+                  <?php 
+                     if(mysqli_num_rows($joinAppQuery) > 0){
+                        while($rows = mysqli_fetch_assoc( $joinAppQuery)){ ?>
+                     <tr>
+                        <td> <div id="reg_num"> <?=$rows['reg_num']?> </div></td>
+                        <td> <img src="../img/upload_documents/2x2/<?=$rows['id_pic']?>" alt="" class="id-pic"></td>
+                        <td> <div id="fullname"> <?=$rows['First_Name']?> <?=$rows['Middle_Name']?> <?=$rows['Last_Name']?> <?=$rows['Extension_Name']?> </div> </td>
+                        <td> <div id="email"> <?=$rows['email']?> </div> </td>
+                        <td> <img src="../img/upload_documents/grade/<?=$rows['grade']?>" alt="" class="gwa-img"></td>
+                        <td> <span style="font-size: .8em;"> <?=$rows['Date']?> <br> <?=$rows['StartTime']?> </span></td>
+                        <td> <?=$rows['status']?></td>
+                        <td> 
+                           <button data-role="approve" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/checked.png" alt=""></button> 
+                           <button data-role="decline" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/cancel.png" alt=""> </button>
+                        </td>
+                     </tr>
+                  <?php }
+                  }
+                  else{ ?>
+                  <td colspan="8"> No applicants yet.. </td> 
+                  <?php }
+                  ?>
                   
-                  <th> Reg No. </th>
-                  <th> 2x2 </th>
-                  <th> Fullname </th>
-                  <th> Email </th>
-                  <th> GWA </th>
-                  <th> Schedule </th>
-                  <th> Status </th>
-                  <th> Action </th>
-               </tr>
-            <?php 
-               if(mysqli_num_rows($joinAppQuery) > 0){
-                  while($rows = mysqli_fetch_assoc( $joinAppQuery)){ ?>
-               <tr>
-                  <td> <div id="reg_num"> <?=$rows['reg_num']?> </div></td>
-                  <td> <img src="../img/upload_documents/2x2/<?=$rows['id_pic']?>" alt="" class="id-pic"></td>
-                  <td> <div id="fullname"> <?=$rows['First_Name']?> <?=$rows['Middle_Name']?> <?=$rows['Last_Name']?> <?=$rows['Extension_Name']?> </div> </td>
-                  <td> <div id="email"> <?=$rows['email']?> </div> </td>
-                  <td> <img src="../img/upload_documents/grade/<?=$rows['grade']?>" alt="" class="gwa-img"></td>
-                  <td> <span style="font-size: .8em;"> <?=$rows['Date']?> <br> <?=$rows['StartTime']?> </span></td>
-                  <td> <?=$rows['status']?></td>
-                  <td> 
-                     <button data-role="approve" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/checked.png" alt=""></button> 
-                     <button data-role="decline" data-id="<?=$rows['reg_num']?>"> <img src="../img/icons/cancel.png" alt=""> </button>
-                  </td>
-               </tr>
-            <?php }
-               }
-               else{ ?>
-                 <td colspan="8"> No applicants yet.. </td> 
-               <?php }
-            ?>
-               
-            </table>
+               </table>
             </div>
          </div>
 
@@ -203,16 +206,20 @@
                   <h1> Approved Applicants </h1>
                </div>
                <div class="search-list">
+                  <div class="status">
+                     <select name="status" id="status">
+                        <option value=""> Choose </option>
+                        <option value="Approved"> Approved </option>
+                        <option value="Declined"> Approved </option>
+                     </select>
+                  </div>
                   <div class="search">
                      <input type="search" name="search" id="search" placeholder="Search">
-                  </div>
-                  <div class="list">
-                     <p> 5/30 </p>
                   </div>
 
                </div>
             </div>
-
+            <div class="tbl-box">
             <table class="tbl-approved-applicant" border="0">
                <tr>
                   
@@ -261,6 +268,67 @@
                ?>
              
             </table>
+            </div>
+         
+         </div>
+
+         <!-- SCHEDULE -->
+         <div class="schedule">
+            <div class="title-header">
+               <div class="title">
+                  <h1> Schedule </h1>
+               </div>
+            </div>
+         
+            <div class="sched-context">
+               <div class="schedule-tbl">
+                  <table border="0">
+                     <tr>
+                        <th> Id </th>
+                        <th> Date </th>
+                        <th> Time </th>
+                        <th> Slot </th>
+                        <th colspan="2"> Action </th>
+                     </tr>
+                     <?php
+                        if(mysqli_num_rows($dateQuery) > 0){
+                           while($rows = mysqli_fetch_assoc($dateQuery)) { ?>
+                           <tr>
+                              <td> <?=$rows['schedID']?> </td>
+                              <td> <?=$rows['Date']?> </td>
+                              <td> <?=$rows['StartTime']?> </td>
+                              <td> <?=$rows['Slot']?> </td>
+                              <td> <a href="#"> Edit </a> </td>
+                              <td> <a href="#"> Del </a> </td>
+                           </tr>
+                     <?php }
+                        }
+                     ?>
+                  
+                  </table>
+               </div>
+            
+               <div class="add-schedule">
+                  <h1> Add schedule </h1>
+                  <label for="dateSched"> Date </label>
+                  <input type="date" name="dateSched" id="dateSched">
+                  <label for="timeSched"> Time </label>
+                  <select name="timeSched" id="timeSched">
+                     <?php
+                        if(mysqli_num_rows($selTimeOnly) > 0){
+                           while($rows = mysqli_fetch_assoc($selTimeOnly)){ ?>
+                               <option value="<?=$rows['StartTime']?>"><?=$rows['StartTime']?></option>
+                     <?php }
+                        }
+                     ?>
+                    
+                  </select>
+                  <label for="slot"> Slot </label>
+                  <input type="number" name="slot" id="slot" min="1" max="20">
+                  <input type="button" value="Save" id="addSched">
+
+               </div>
+            </div>   
          </div>
       </div>
    </section>

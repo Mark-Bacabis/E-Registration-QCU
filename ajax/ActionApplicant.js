@@ -6,12 +6,6 @@ $(document).ready(function(){
          regNum:reg_num
       });
       
-      $('.summary').load('../method/overview.php',{
-         
-      });
-      
-      
-
    });
 
 
@@ -21,8 +15,6 @@ $(document).ready(function(){
       $("#tbl-box").load('../method/decline_applicants.php', {
          regNum:reg_num
       });
-      
-      
 
    });
 });
