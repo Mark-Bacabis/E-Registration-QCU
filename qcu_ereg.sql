@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2022 at 02:06 AM
+-- Generation Time: May 14, 2022 at 07:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -275,6 +275,26 @@ INSERT INTO `stud_status` (`id`, `reg_num`, `status`) VALUES
 (21, 'REG202202', 'Declined'),
 (22, 'REG202203', 'Approved');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `web_preference`
+--
+
+CREATE TABLE `web_preference` (
+  `id` int(11) NOT NULL,
+  `name` varchar(55) NOT NULL,
+  `status` varchar(55) NOT NULL,
+  `url` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `web_preference`
+--
+
+INSERT INTO `web_preference` (`id`, `name`, `status`, `url`) VALUES
+(1, 'fillup', 'Off', './applicants/Sorry.php');
+
 --
 -- Indexes for dumped tables
 --
@@ -346,6 +366,12 @@ ALTER TABLE `stud_status`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `web_preference`
+--
+ALTER TABLE `web_preference`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -414,6 +440,12 @@ ALTER TABLE `stud_sched`
 --
 ALTER TABLE `stud_status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `web_preference`
+--
+ALTER TABLE `web_preference`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
