@@ -53,6 +53,7 @@
              
             </table>
    <?php } 
+   
    else if($_POST['status'] == 'Approved') { ?>
             <table class="tbl-approved-applicant" border="0">
                <tr>
@@ -103,6 +104,7 @@
              
             </table>
    <?php }
+
    else if($_POST['status'] == 'Declined'){ ?>
             <table class="tbl-approved-applicant" border="0">
                <tr>

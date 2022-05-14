@@ -3,17 +3,21 @@
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!--<meta http-equiv="refresh" content="5; url=http://localhost/EregQCU/index.php">-->
+   <meta http-equiv="refresh" content="5; url=http://localhost/EregQCU/index.php">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> Thank you </title>
+   <title> Sorry </title>
 </head>
 <body>
+   <!--<header>
+      <img src="../img/QCU_Logo_2019.png">
+   </header> -->
    <div>
-      <img src="../img/icons/thank-you.png" alt="">
-      <h1> Congratulations! </h1>
-      <p>  Your response has been recorded!
- we will send your status(?) to your email address and wait for confirmation for taking Entrance Examination at Quezon City University, Thank you! </p>
+      <img src="../img/icons/sorry.png" alt="">
+      <h1> Sorry </h1>
+      <p> Quezon City University E-registration for Entrance Examination is currently not available.
+ We are only available on June to August for accepting registration of freshmen students to take the Entrance Examination at Quezon City University. Thank you! </p>
    </div>
+
 
    <div class="message">
       <p> This page will redirect to the homepage in 5 seconds...</p>

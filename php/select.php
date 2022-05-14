@@ -70,11 +70,6 @@
    $selTimeOnlyQuery = "SELECT DISTINCT StartTime FROM `schedule`";
    $selTimeOnly = mysqli_query($con, $selTimeOnlyQuery);
 
-   // SELECT ADMIN 
-   $adminID = $_SESSION['adminID'];
-   $selAdmin = "SELECT * FROM `admin_account` WHERE id = $adminID ";
-   $selAdminQ = mysqli_query($con, $selAdmin);
-   $admin = mysqli_fetch_assoc($selAdminQ);
-
+ 
 
 ?>

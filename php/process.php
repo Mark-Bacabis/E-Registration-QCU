@@ -50,15 +50,6 @@
       $id2x2_size = $id2x2['size'];
       $id2x2_tmp_name = $id2x2['tmp_name'];
       $id2x2_err = $id2x2['error'];
-
-      /*echo $diploma_filename;
-      echo $grade_filename;
-      echo $gdMoral_filename;
-      echo $id2x2_filename;*/
-
-      //findSchedule($schedDate, $schedTime);
-
-      //echo $schedID;
       
       if($diploma_err == 0 || $grade_err == 0 || $gdMoral_err == 0 || $id2x2_err == 0){
          $extension = ['png', 'jpg', 'jpeg', 'PNG', 'JPG', 'JPEG'];

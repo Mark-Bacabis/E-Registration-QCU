@@ -149,6 +149,7 @@ section{
 .content-box .header .profile-icon:hover{
    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.13);
    cursor: pointer;
+  
 }
 
 
@@ -159,6 +160,11 @@ section{
 /* Off/On registration */
 .on-off{
    margin-left: 20px;
+   display: flex;
+   align-items: center;
+}
+.on-off p{
+   margin-right: 10px;
 }
 .on-off .label{
    position: relative;

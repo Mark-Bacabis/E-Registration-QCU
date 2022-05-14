@@ -12,7 +12,18 @@
    include "../php/count.php";
    include "../method/functions.php";
 
-   //echo $cntApproved['total'];
+    // SELECT ADMIN 
+    $adminID = $_SESSION['adminID'];
+    $selAdmin = "SELECT * FROM `admin_account` WHERE id = $adminID ";
+    $selAdminQ = mysqli_query($con, $selAdmin);
+    $admin = mysqli_fetch_assoc($selAdminQ);
+
+
+    $prefQuery = "SELECT * FROM `web_preference` WHERE `name` = 'fillup'";
+    $fill = mysqli_query($con, $prefQuery);
+    $fillUp = mysqli_fetch_assoc($fill);
+ 
+   
 
 ?>
 <!DOCTYPE html>
@@ -32,6 +43,7 @@
 <script src="../ajax/ActionApplicant.js"></script>
 <script src="../ajax/addSched.js"></script>
 <script src="../ajax/approved.js"></script>
+<script src="../ajax/pref.js"></script>
 
 <!-- CHART --> 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -79,10 +91,23 @@
             <div class="open-close-reg">
                <h3> Registration </h3>
                <div class="on-off">
-                  <input type="checkbox" name="checkbox" id="checkbox" checked>
-                  <label for="checkbox" class="label">
-                     <div class="ball"></div>
-                  </label>
+                  <?php
+                     if($fillUp['status'] == 'On'){ ?>
+                     <p class="status-web"> <?=$fillUp['status']?> </p>
+                     <input type="checkbox" name="checkbox" id="checkbox" checked>
+                     <label for="checkbox" class="label" id="label">
+                        <div class="ball"></div>
+                     </label>
+
+                <?php  } else if($fillUp['status'] == 'Off'){ ?>
+                     <p class="status-web"><?=$fillUp['status']?></p>
+                     <input type="checkbox" name="checkbox" id="checkbox">
+                     <label for="checkbox" class="label" id="label">
+                        <div class="ball"> </div>
+                     </label>
+               <?php  }
+                  ?>
+                  
                </div>
             </div>
 

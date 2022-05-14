@@ -1,4 +1,13 @@
+<?php
+   include "./php/db_connection.php";
 
+   $prefQuery = "SELECT * FROM `web_preference` WHERE `name` = 'fillup'";
+   $fill = mysqli_query($con, $prefQuery);
+   $fillUp = mysqli_fetch_assoc($fill);
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +37,13 @@
                <li> <a href="#"> About </a> </li>
             </ul>
 
-            <a href="./form/fillup.php" class="s-nav"> Register </a>
+            <?php
+            if($fillUp['status'] == 'On'){ ?>
+                 <a href="./form/fillup.php" class="s-nav"> Register </a>
+            <?php  } else { ?>
+               <a href="./applicants/Sorry.php" class="s-nav"> Register </a>
+            <?php } ?>
+        
          </nav>
       </div>
    </div>
@@ -48,7 +63,13 @@
          <p> Good life Starts here </p>
       </div>
       <div class="button-hero">
-         <a href="./form/fillup.php"> Register now </a>
+         <?php
+            if($fillUp['status'] == 'On'){ ?>
+                <a href="./form/fillup.php"> Register now </a>
+         <?php  } else { ?>
+            <a href="./applicants/Sorry.php"> Register now </a>
+         <?php } ?>
+        
       </div>
    </div>
    <!--x first page -->
