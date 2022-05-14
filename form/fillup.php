@@ -1,6 +1,14 @@
 <?php
    include "../php/db_connection.php";
    include "../php/select.php";
+
+   $prefQuery = "SELECT * FROM `web_preference` WHERE `name` = 'fillup'";
+   $fill = mysqli_query($con, $prefQuery);
+   $fillUp = mysqli_fetch_assoc($fill);
+
+   if($fillUp['status'] == 'Off'){
+      header('location: ../applicants/Sorry.php');
+   }
 ?>
 
 <!DOCTYPE html>
