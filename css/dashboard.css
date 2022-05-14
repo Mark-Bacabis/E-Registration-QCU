@@ -343,12 +343,8 @@ section{
 .applicants .title-header .search-list{
    display: flex;
    align-items: center;
-   background-color: #279260;
 }
 
-.applicants .title-header .search-list .status{
-   margin-right: 10px;
-}
 
 .applicants .title-header .search-list .search{
    margin-right: 10px;
@@ -457,6 +453,17 @@ section{
  .approved-applicants .title-header .search-list{
     display: flex;
     align-items: center;
+ }
+
+ .approved-applicants .title-header .search-list .status{
+    margin-right: 10px;
+ }
+
+ .approved-applicants .title-header .search-list .status select{
+    outline: none;
+    padding: 2px 10px;
+    font-size: 1em;
+    border: none;
  }
  
  .approved-applicants .title-header .search-list .search{

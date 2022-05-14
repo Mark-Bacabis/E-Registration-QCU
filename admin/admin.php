@@ -31,7 +31,7 @@
  <!-- AJAX FILES -->
 <script src="../ajax/ActionApplicant.js"></script>
 <script src="../ajax/addSched.js"></script>
-
+<script src="../ajax/approved.js"></script>
 <!-- CHART --> 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -152,11 +152,7 @@
                <div class="title">
                   <h1> Applicants </h1>
                </div>
-               <div class="search-list">
-                  <div class="search">
-                     <input type="search" name="search" id="search" placeholder="Search">
-                  </div>
-               </div>
+               
             </div>
 
             <div class="tbl-box" id="tbl-box">
@@ -208,18 +204,18 @@
                <div class="search-list">
                   <div class="status">
                      <select name="status" id="status">
-                        <option value=""> Choose </option>
+                        <option value=""> All </option>
                         <option value="Approved"> Approved </option>
-                        <option value="Declined"> Approved </option>
+                        <option value="Declined"> Declined </option>
                      </select>
                   </div>
                   <div class="search">
-                     <input type="search" name="search" id="search" placeholder="Search">
+                     <input type="search" name="search" id="searchApp" placeholder="Search">
                   </div>
 
                </div>
             </div>
-            <div class="tbl-box">
+            <div class="tbl-box" id="tbl-box-approved">
             <table class="tbl-approved-applicant" border="0">
                <tr>
                   
