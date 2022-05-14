@@ -9,11 +9,8 @@
 
       addSchedule($schedDate, $schedTime, $schedSlot);
    }
-   
-
    include "../php/select.php";
 ?>
-
                   <table border="0">
                      <tr>
                         <th> Id </th>

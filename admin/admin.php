@@ -32,6 +32,7 @@
 <script src="../ajax/ActionApplicant.js"></script>
 <script src="../ajax/addSched.js"></script>
 <script src="../ajax/approved.js"></script>
+
 <!-- CHART --> 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -195,11 +196,11 @@
             </div>
          </div>
 
-         <!-- APPROVED -->
+         <!-- APPLICANT STATUS -->
          <div class="approved-applicants">
             <div class="title-header">
                <div class="title">
-                  <h1> Approved Applicants </h1>
+                  <h1> Applicants Status </h1>
                </div>
                <div class="search-list">
                   <div class="status">
@@ -328,12 +329,6 @@
          </div>
       </div>
    </section>
-
-
-
-
-
-
 
    <!-- IMAGE VIEWER -->
    <div class="gwa-viewer" id="gwa-viewer">

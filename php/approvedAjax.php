@@ -3,9 +3,6 @@
    include "./db_connection.php";
    include "./select.php";
 
-
-  
-
    if(empty($_POST['status'])) { ?>
             <table class="tbl-approved-applicant" border="0">
                <tr>

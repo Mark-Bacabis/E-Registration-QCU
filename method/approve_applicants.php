@@ -1,14 +1,9 @@
 <?php
    include "../php/db_connection.php";
-   
    include "../php/date.php";
    include "../php/count.php";
    include "../method/functions.php";
-
-  
-
    $regNum = $_POST['regNum'];
-
    // SELECT ALL APPLICANTS
    $selApplicants = "SELECT * FROM `stud_application` a 
    JOIN `stud_sched` b
@@ -33,13 +28,11 @@
    sendEmail($appNum);
 
    include "../php/join.php";
-
 ?>
 
 
 <table class="tbl-applicant" border="0">
-               <tr>
-                  
+               <tr>          
                   <th> Reg No. </th>
                   <th> 2x2 </th>
                   <th> Fullname </th>
@@ -71,5 +64,4 @@
                  <td colspan="8"> No applicants yet.. </td> 
                <?php }
             ?>
-               
             </table>
