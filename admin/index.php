@@ -1,3 +1,10 @@
+<?php
+   session_start();
+   $adminID = $_SESSION['adminID'];
+   if(!empty($adminID)){
+      header('location: ./index.php');
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -3,11 +3,12 @@
    $schedTime = $_POST['schedDate'];
    $schedDate =  $_POST['schedTime']; 
 
-    // SELECT START TIME, END TIME, AND SLOTS PER DATES
-   $selSchedPerDate = "SELECT DISTINCT `StartTime`, `Slot` FROM `schedule` WHERE `Date` = '$schedTime' AND `StartTime` = '$schedDate'";
-   $schedQuery = mysqli_query($con, $selSchedPerDate);
-   $slot = mysqli_fetch_assoc($schedQuery);
+      
+   // SELECT SLOT ONLY
+   $selSlotOnlyQuery = "SELECT `Slot` FROM `schedule` WHERE `Date` = '$schedDate' AND `Slot` = '$schedTime'";
+   $selSlotOnly = mysqli_query($con, $selSlotOnlyQuery);
+   $slotOnly = mysqli_fetch_assoc($selSlotOnly);
 ?>
 
 <label for="slot"> Slot </label>
-<input type="text" id="slot" name="schedslot" value="<?=$slot['Slot']?>" disabled>
+<input type="text" id="slot" name="schedslot" value="<?=$slotOnly['Slot']?>" disabled>

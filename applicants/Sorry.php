@@ -1,3 +1,9 @@
+<?php
+  if($fillUp['status'] == 'On'){
+   header('location: ../form/fillup.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

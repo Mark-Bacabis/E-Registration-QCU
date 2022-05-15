@@ -2,7 +2,7 @@
    include "./db_connection.php";
    $schedDate = $_POST['schedDate'];
   // SELECT TIME ONLY 
-   $selTimeOnlyQuery = "SELECT DISTINCT StartTime FROM `schedule` WHERE `Date` = '$schedDate' AND `Slot` != 0 ";
+   $selTimeOnlyQuery = "SELECT `StartTime` FROM `schedule` WHERE `Date` = '$schedDate'  AND `Slot` != 0;";
    $selTimeOnly = mysqli_query($con, $selTimeOnlyQuery);
 
    if(mysqli_num_rows($selTimeOnly) > 0){

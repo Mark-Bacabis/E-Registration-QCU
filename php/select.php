@@ -63,12 +63,19 @@
 
 
    // SELECT DATE ONLY 
-   $selDateOnlyQuery = "SELECT DISTINCT Date FROM `schedule`";
+   $selDateOnlyQuery = "SELECT DISTINCT Date FROM `schedule` WHERE `Slot` != 0 ";
    $selDateOnly = mysqli_query($con, $selDateOnlyQuery);
 
    // SELECT TIME ONLY 
-   $selTimeOnlyQuery = "SELECT StartTime FROM schedule WHERE Date = '2022-05-16'";
+   $selTimeOnlyQuery = "SELECT `StartTime` FROM `schedule` WHERE `Date` = '2022-05-16'  AND `Slot` != 0;";
    $selTimeOnly = mysqli_query($con, $selTimeOnlyQuery);
+
+   // SELECT SLOT ONLY
+   $selSlotOnlyQuery = "SELECT `Slot` FROM `schedule` WHERE `Date` = '2022-05-16' AND `Slot` = '9:00AM-10:00AM'";
+   $selSlotOnly = mysqli_query($con, $selSlotOnlyQuery);
+   $slotOnly = mysqli_fetch_assoc($selSlotOnly);
+
+
  
 
 ?>
