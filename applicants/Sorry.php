@@ -1,7 +1,12 @@
 <?php
+   include "../php/db_connection.php";
+  $prefQuery = "SELECT * FROM `web_preference` WHERE `name` = 'fillup'";
+  $fill = mysqli_query($con, $prefQuery);
+  $fillUp = mysqli_fetch_assoc($fill);
+  
   if($fillUp['status'] == 'On'){
    header('location: ../form/fillup.php');
-}
+   }
 
 ?>
 <!DOCTYPE html>
