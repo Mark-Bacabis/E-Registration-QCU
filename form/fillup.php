@@ -54,7 +54,7 @@
 
            
             <!-- Demographic 1 -->
-            <div class="demographic-box toLeft"> 
+            <div class="demographic-box "> 
                <form action="../php/process.php" method="POST" enctype="multipart/form-data">
                <h1> Demographic Profile </h1>
                <div class="input-forms">  
@@ -164,7 +164,7 @@
             
 
             <!-- Contact and schedule -->
-            <div class="contact-sched ">
+            <div class="contact-sched toLeft">
             
                <div class="input-forms">
                   <div class="contact">
