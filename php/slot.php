@@ -1,6 +1,6 @@
 <?php
    include "./db_connection.php";
-   $schedTime = $_POST['schedDate']."<br>";
+   $schedTime = $_POST['schedDate'];
    $schedDate =  $_POST['schedTime']; 
 
     // SELECT START TIME, END TIME, AND SLOTS PER DATES

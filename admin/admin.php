@@ -48,6 +48,13 @@
 <!-- CHART --> 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+
+<script>
+   function loadref(time){
+      setTimeout("location.reload(true);", time);
+   }
+</script>
+
 <body>
    <section>
       <div class="side-navbar">

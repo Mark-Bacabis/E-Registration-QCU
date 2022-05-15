@@ -20,7 +20,11 @@
    <link rel="stylesheet" href="../css/form.css">
    <title> Fill up</title>
 </head>
-
+<script>
+    function loadref(time){
+      setTimeout("location.reload(true);", time);
+   }
+</script>
 
  <!-- AJAX PLUGINS -->
  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -50,7 +54,7 @@
 
            
             <!-- Demographic 1 -->
-            <div class="demographic-box"> 
+            <div class="demographic-box toLeft"> 
                <form action="../php/process.php" method="POST" enctype="multipart/form-data">
                <h1> Demographic Profile </h1>
                <div class="input-forms">  
@@ -160,7 +164,7 @@
             
 
             <!-- Contact and schedule -->
-            <div class="contact-sched toLeft">
+            <div class="contact-sched ">
             
                <div class="input-forms">
                   <div class="contact">

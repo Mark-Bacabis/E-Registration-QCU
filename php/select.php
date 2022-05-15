@@ -67,7 +67,7 @@
    $selDateOnly = mysqli_query($con, $selDateOnlyQuery);
 
    // SELECT TIME ONLY 
-   $selTimeOnlyQuery = "SELECT DISTINCT StartTime FROM `schedule` WHERE `Date` = '2022-05-16' AND `Slot` != 0";
+   $selTimeOnlyQuery = "SELECT StartTime FROM schedule WHERE Date = '2022-05-16'";
    $selTimeOnly = mysqli_query($con, $selTimeOnlyQuery);
  
 

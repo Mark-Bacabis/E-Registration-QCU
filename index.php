@@ -17,7 +17,12 @@
    <link rel="stylesheet" href="./css/styles.css">
    <title> Quezon City University </title>
 </head>
-<body>
+<script>
+   function loadref(time){
+      setTimeout("location.reload(true);", time);
+   }
+</script>
+<body onload="Javascript:loadref(30000)">
 
    <!--<div class="button-fixed">
       <p> Shop now </p>
