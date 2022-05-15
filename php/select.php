@@ -5,7 +5,7 @@
    $dateQuery = mysqli_query($con, $selectDate);
 
    // SELECT START TIME, END TIME, AND SLOTS PER DATES
-   $selSchedPerDate = "SELECT DISTINCT `StartTime`, `Slot` FROM `schedule`";
+   $selSchedPerDate = "SELECT DISTINCT `StartTime`, `Slot` FROM `schedule` WHERE `Date` = '2022-05-16' AND `StartTime` = '9:00AM-10:00AM'";
    $schedQuery = mysqli_query($con, $selSchedPerDate);
    $slot = mysqli_fetch_assoc($schedQuery);
 
@@ -67,9 +67,8 @@
    $selDateOnly = mysqli_query($con, $selDateOnlyQuery);
 
    // SELECT TIME ONLY 
-   $selTimeOnlyQuery = "SELECT DISTINCT StartTime FROM `schedule`";
+   $selTimeOnlyQuery = "SELECT DISTINCT StartTime FROM `schedule` WHERE `Date` = '2022-05-16' AND `Slot` != 0";
    $selTimeOnly = mysqli_query($con, $selTimeOnlyQuery);
-
  
 
 ?>

@@ -43,8 +43,13 @@ function registerApplicant($lname, $fname, $mname, $exname, $bdate , $bplace, $a
    
    $findSched = "SELECT * FROM `schedule` WHERE `Date` = '$schedDate' AND `StartTime` = '$schedTime'";
    $query = mysqli_query($con, $findSched);
-   $id = mysqli_fetch_assoc($query);
-   $schedId = $id['schedID'];
+   $sched = mysqli_fetch_assoc($query);
+   $schedId = $sched['schedID'];
+
+   $slot = $sched['Slot'] - 1;
+
+   $updSched = "UPDATE `schedule` SET `Slot`='$slot' WHERE `schedID` = $schedId ";
+   mysqli_query($con, $updSched);
 
    // SELECT 
    $insertApplicant = "INSERT INTO `stud_application`

@@ -25,6 +25,8 @@
  <!-- AJAX PLUGINS -->
  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+ <!-- AJAX --> 
+ <script src="../ajax/schedule.js"></script>
 
 <body>
    <header>
@@ -174,6 +176,8 @@
                
                     
                   </div>
+
+
                   <div class="schedule">
                      <h1> Schedule </h1>
                      
@@ -183,9 +187,10 @@
                         <select name="schedDate" id="schedDate">
                            <?php
                               if(mysqli_num_rows($selDateOnly) > 0){
-                                 while($rows = mysqli_fetch_assoc($selDateOnly)){ ?>
+                                 while($rows = mysqli_fetch_assoc($selDateOnly)){ 
+                                    ?>
                                  <option value="<?=$rows['Date']?>"> <?=$rows['Date']?> </option>      
-                              <?php }
+                              <?php } 
                               }
                            ?>
                         </select>
@@ -198,10 +203,11 @@
                         <label for="schedTime"> Time </label>
                         <select name="schedTime" id="schedTime">
                            <?php
-                             if(mysqli_num_rows($selTimeOnly) > 0 ){
-                                 while($rows = mysqli_fetch_assoc($selTimeOnly)){?>
+                             if(mysqli_num_rows($selTimeOnly) > 0){
+                                 while($rows = mysqli_fetch_assoc($selTimeOnly)){  ?>
                                     <option> <?=$rows['StartTime']?> </option>
-                                 <?php }
+                                 <?php 
+                                 }
                               } else{ ?>
                                  <option> No available </option>
                               <?php } 
@@ -209,10 +215,10 @@
                            
                         </select>
                      </div>
-                     <!--<div class="text-input">
+                     <div class="text-input" id="slot-containter">
                         <label for="slot"> Slot </label>
                         <input type="text" id="slot" name="schedslot" value="<?=$slot['Slot']?>" disabled>
-                     </div>-->
+                     </div>
                   
                   </div>
                </div>
