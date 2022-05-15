@@ -12,11 +12,11 @@
       <img src="../img/icons/thank-you.png" alt="">
       <h1> Congratulations! </h1>
       <p>  Your response has been recorded!
- we will send your status(?) to your email address and wait for confirmation for taking Entrance Examination at Quezon City University, Thank you! </p>
+ we will send your status to your email address and wait for confirmation for taking the Entrance Examination at Quezon City University, Thank you! </p>
    </div>
 
    <div class="message">
-      <p> This page will redirect to the homepage in 5 seconds...</p>
+      <p> This page will redirect to the homepage in 10 seconds...</p>
    </div>
 </body>
 <style>

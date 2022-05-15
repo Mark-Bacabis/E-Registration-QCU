@@ -14,7 +14,7 @@
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta http-equiv="refresh" content="5; url=http://localhost/EregQCU/index.php">
+   <meta http-equiv="refresh" content="10; url=http://localhost/EregQCU/index.php">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title> Sorry </title>
 </head>
@@ -26,12 +26,12 @@
       <img src="../img/icons/sorry.png" alt="">
       <h1> Sorry </h1>
       <p> Quezon City University E-registration for Entrance Examination is currently not available.
- We are only available on June to August for accepting registration of freshmen students to take the Entrance Examination at Quezon City University. Thank you! </p>
+ We are only available on <b> June to August </b> for accepting registration of freshmen students to take the Entrance Examination at Quezon City University. Thank you! </p>
    </div>
 
 
    <div class="message">
-      <p> This page will redirect to the homepage in 5 seconds...</p>
+      <p> This page will redirect to the homepage in 10 seconds...</p>
    </div>
 </body>
 <style>
