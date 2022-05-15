@@ -55,7 +55,7 @@ function registerApplicant($lname, $fname, $mname, $exname, $bdate , $bplace, $a
    $insertApplicant = "INSERT INTO `stud_application`
    (`reg_num`, `Last_Name`, `First_Name`, `Middle_Name`, `Extension_Name`, `Complete_Address`, `Birthdate`, `Birth_Place`, `Age`, `Sex`, `Civil_Status`, `Nationality`, `Religion`, `Mobile_Number`, `email`, `dor`, `month`)
    VALUES 
-   ('$regNum','$lname','$fname','$mname','$exname','$hNoStrt $brgy $city $zipCode', '$bdate','$bplace','$age','$sex','$cStatus','$nationality','$religion','$cNum',' $email','$dateNow','$month')";
+   ('$regNum','$lname','$fname','$mname','$exname','$hNoStrt $brgy $city $zipCode', '$bdate','$bplace','$age','$sex','$cStatus','$nationality','$religion', '$cNum', '$email','$dateNow','$month')";
 
    $insertDocuments = "INSERT INTO `stud_documents`(`reg_num`, `email`, `diploma`, `good_moral`, `grade`, `id_pic`) VALUES ('$regNum','$email','$diploma','$gdMoral','$grade','$id2x2')";
 

@@ -31,6 +31,7 @@
 
  <!-- AJAX --> 
  <script src="../ajax/schedule.js"></script>
+ <script src="../ajax/emailValidation.js"></script>
 
 <body>
    <header>
@@ -170,7 +171,7 @@
                   <div class="contact">
                      <h1> Contact </h1>
                      <div class="text-input">
-                        <label for="email"> Email <span style="color:red;font-size:.8em">  *must be a gmail account </span> <span class="errMessage"> </span>  </label>
+                        <label for="email"> Email <span style="color:red;font-size:.8em" id="email-mess">  *must be a gmail account </span> <span class="errMessage"> </span>  </label>
                         <input type="text" id="email" name="email" >
                      </div>
                      <div class="text-input">
