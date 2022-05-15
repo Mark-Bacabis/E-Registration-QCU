@@ -20,7 +20,7 @@
    GROUP BY month";
    $cntAppEachMos = mysqli_query($con, $cntApplicants);
    //$appEachMos = mysqli_fetch_assoc($cntAppEachMos);
-
+   
 
    // SELECT ALL APPLICANTS AND THEIR STATUS
    $selAppStatus = "SELECT DISTINCT * FROM `stud_application` a 

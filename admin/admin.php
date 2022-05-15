@@ -182,7 +182,7 @@
             </div>
 
             <div class="tbl-box" id="tbl-box">
-               <table class="tbl-applicant" border="0">
+            <table class="tbl-applicant" border="0">
                   <tr>
                      
                      <th> Reg No. </th>
