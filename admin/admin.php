@@ -444,7 +444,7 @@
             },
             title: {
                display: true,
-               text: 'Registered Students per course'
+               text: "Applicant's Status"
             }
          }
       },
