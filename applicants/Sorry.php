@@ -14,7 +14,7 @@
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta http-equiv="refresh" content="10; url=http://localhost/EregQCU/index.php">
+   <meta http-equiv="refresh" content="10; url=http://localhost:443/E-registration-QCU/index.php">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title> Sorry </title>
 </head>
